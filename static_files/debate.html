@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset='utf-8' />
+        <title>Debate - unbiased</title>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+      <!--  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' /> -->
+        <link rel="stylesheet" href="/css/debate.css">
+    </head>
+    <body>
+      <div class="header">
+        <div class="header">
+          <img class="logo" src="http://via.placeholder.com/100x50">
+          <ul>
+            <a href="voteApp.html"><li>Find Your Candidate</li></a>
+            <a href="elections.html"><li>Vote</li></a>
+            <li>Debate</li>
+          </ul>
+          <div class="cd-button">Create Discussion</div>
+          <img class="profile-icon">
+        </div>
+      </div>
+
+    </center><h1>Debate</h1></center>
+    <div class="chat"></div>
+
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" size="63" />
+        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+    </form>
+
+<!--    <script type="text/javascript">
+    // jQuery Document
+    $(document).ready(function(){
+      //If user submits the form
+	     $("#submitmsg").click(function(){
+		       var clientmsg = $("#usermsg").val();
+		         $.post("post.php", {text: clientmsg});
+		           $("#usermsg").attr("value", "");
+		             return false;
+   	   });
+
+    });
+
+  </script> -->
+    </body>
+</html>
