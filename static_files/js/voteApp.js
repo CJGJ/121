@@ -22,7 +22,8 @@ function initializePage() {
 					console.log("google api loaded");
           $.each(candidates.contests, function(i, candidate){
             $candidates.append(`<li>Representatives: <b>${candidates.contests[i].candidates[0].name}</b></li>`);
-            console.log(candidates.contests[i].candidates[0].name);
+            $candidates.append(`<p style="padding-left:20px">Party: <b>${candidates.contests[i].candidates[0].party}</b></p>`);
+            console.log(candidates);
 				  });
 			}
 		});
