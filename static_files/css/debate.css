@@ -53,3 +53,52 @@ a {
 .logout { float:right; }
 
 .msgln { margin:0 0 2px 0; }
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  background-color: #DDDDDD;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555555;
+
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.header .logo {
+  width: 100px;
+}
+
+.header ul {
+  width: 60%;
+  padding-left: 30px;
+}
+
+.header li {
+  color: #555555;
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 30px;
+}
+
+.cd-button {
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #555555;
+  color: #555555;
+  float: right;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.header .profile-icon {
+  width: 50px;
+  padding-left: 20px;
+  float: right;
+}
