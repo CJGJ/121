@@ -7,7 +7,11 @@
     <title>To the polls!</title>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- script src="http://code.jquery.com/jquery-1.11.0.min.js"></script -->
+    <!-- script src='js/news.js'></script-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- script src="jquery-3.3.1.min.js"></script -->
+    <script src="/js/elections.js"></script>
 
   </head>
   <body>
@@ -34,15 +38,20 @@
             </div>
 
             <div class="electionContent">
-              <h2 class="upcoming">Upcoming Election: Name of Election</h2>
-              <p>Description of Election</p>
+              <!--h2 class="upcoming">Upcoming Election: Name of Election</h2>
+              <p>Description of Election</p-->
+
+              <div class="election-id"></div>
+              <div class="election-name"></div>
+              <div class="election-date"></div>
+
 
             </div>
-            
+
           </div>
 
 
-          
+
         </div>
 
         <div class="map-container">
@@ -115,7 +124,4 @@
       });
     </script>
   </body>
-  <script type="text/javascript" src='js/news.js'></script>
-  <script src="jquery-3.3.1.min.js"></script>
-  <script src="/js/voteApp.js"></script>
 </html>
