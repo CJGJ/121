@@ -1,0 +1,92 @@
+#logo {
+    margin-top: 70px;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+.container {
+    padding: 50px;
+}
+
+h2 {
+    color: black;
+    margin: 0 180px 10px 180px;
+    font-size: 30px;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#input1, #input2 {
+    width: 50%;
+    padding: 20px 20px;
+    margin: 10px 180px 40px 180px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#login, #signUp {
+     font-size: 30px;
+}
+
+#loginStuff {
+    margin-top: 80px;
+}
+
+
+#login, #signUp {
+    background: linear-gradient(to right, #FEEA69, #37B081);
+    color: white;
+    padding: 25px 25px;
+    margin: 10px 180px 40px 180px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.01);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
