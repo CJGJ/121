@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/voteApp.css">
+    <link rel="stylesheet" type="text/css" href="css/elections.css">
+    <title>To the polls!</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="http://via.placeholder.com/100x50">
+      <ul>
+        <li>Find Your Candidate</li>
+        <a href="elections.html"><b><li>Vote</li></b></a>
+        <li>Debate</li>
+      </ul>
+      <div class="cd-button">Create Discussion</div>
+      <img class="profile-icon">
+    </div>
+
+
+    <div class="main-container">
+        <div id="news-feed-container">
+
+          <div class="content-container">
+
+            <div class="search-container">
+              <input id="electionBox" type="text" size="20" placeholder="Location" />
+              <button id="searchButton">Get Elections</button>
+            </div>
+
+            <div class="electionContent">
+              <h2 class="upcoming">Upcoming Election: Name of Election</h2>
+              <p>Description of Election</p>
+
+            </div>
+            
+          </div>
+
+
+          
+        </div>
+
+        <div class="map-container">
+            <div id='map'></div>
+        </div>
+    </div>
+
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiaGFpamFuIiwiYSI6ImNqZWt1aGUzNjQ1YnAydmxueGl4ejIxcXEifQ.BePDVwa3Jj_6B89oTQ0LNA';
+      var geojson = {
+          "type": "FeatureCollection",
+          "features": [
+              {
+                  "type": "Feature",
+                  "properties": {
+                      "message": "Foo",
+                      "iconSize": [60, 60]
+                  },
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [-117.2340, 32.8801]
+                  }
+              },
+              {
+                  "type": "Feature",
+                  "properties": {
+                      "message": "Bar",
+                      "iconSize": [50, 50]
+                  },
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [-117.25, 32.89]
+                  }
+              },
+              {
+                  "type": "Feature",
+                  "properties": {
+                      "message": "Baz",
+                      "iconSize": [40, 40]
+                  },
+                  "geometry": {
+                      "type": "Point",
+                      "coordinates": [-117.232, 32.8903]
+                  }
+              }
+          ]
+      };
+      var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/mapbox/streets-v9', //hosted style id
+          center: [-117.2340, 32.8801], // starting position
+          zoom: 12 // starting zoom
+      });
+      // add markers to map
+      geojson.features.forEach(function(marker) {
+          // create a DOM element for the marker
+          var el = document.createElement('div');
+          el.className = 'marker';
+          el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+          el.style.width = marker.properties.iconSize[0] + 'px';
+          el.style.height = marker.properties.iconSize[1] + 'px';
+          el.style.borderRadius = '50%';
+          var popup = new mapboxgl.Popup()
+              .setText('Construction on the Washington Monument began in 1848.');
+          // add marker to map
+          new mapboxgl.Marker(el)
+              .setLngLat(marker.geometry.coordinates)
+              .setPopup(popup)
+              .addTo(map);
+      });
+    </script>
+  </body>
+  <script type="text/javascript" src='js/news.js'></script>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="/js/voteApp.js"></script>
+</html>
