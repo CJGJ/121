@@ -7,18 +7,19 @@
 
 ## UI Skeleton:
 
-![Login Screen](link here)
+![Login Screen](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot.png)
 - User logs in using existing email and password. We will set up a signup page later on and will allow the user to connect to different social media platforms.
 
-![Find a Representative](link here)
+![Find a Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot1.png)
 - 
-![Representative](link here)
-- 
-
-![Elections](link here)
+![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot2.png)
+![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot3.png)
 - 
 
-![Debate](link here)
+![Elections](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot4.png)
+- 
+
+![Debate](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot5.png)
 - 
 
 ## User Privacy:
