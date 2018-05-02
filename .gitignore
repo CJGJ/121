@@ -1,2 +1,2 @@
 # stop dumb node_module errors
-node_module/*
+node_modules/
