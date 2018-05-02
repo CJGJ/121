@@ -1,25 +1,16 @@
 {
-  "name": "IntroHCI",
-  "version": "0.0.1",
-  "author": "Intro HCI Staff",
-
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
-  },
-  "license": "MIT",
-
-  "private": true,
+  "name": "petsapp-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "3.x",
-    "express3-handlebars": "*",
-    "mongodb": "*",
-    "mongoose": "*"
-  },
-  "engines": {
-    "node": "0.10.x"
-  }  
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "sqlite3": "^4.0.0"
+  }
 }
