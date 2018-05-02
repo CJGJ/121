@@ -21,7 +21,7 @@ function initializePage() {
 			success: function(candidates) {
 					console.log("google api loaded");
           $.each(candidates.contests, function(i, candidate){
-            $candidates.append(`<li>Representatives: <b>${candidates.contests[i].candidates[0].name}</b></li>`);
+            $candidates.append(`<a href="representative.html"><li>Representatives: <b>${candidates.contests[i].candidates[0].name}</b></li></a>`);
             console.log(candidates.contests[i].candidates[0].name);
 				  });
 			}
