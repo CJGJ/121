@@ -34,6 +34,8 @@ const app = express();
 const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('pets.db');
 
+const login = require('./static_files/js/login');
+
 
 // put all of your static files (e.g., HTML, CSS, JS, JPG) in the static_files/
 // sub-directory, and the server will serve them from there. e.g.,:
@@ -54,6 +56,10 @@ app.get('/voters', (req, res) => {
     res.send(all);
   });
 });
+
+/*app.get('/login', (req, res) => {
+  res.render('login');
+});*/
 
 
 
