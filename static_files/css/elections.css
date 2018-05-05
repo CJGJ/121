@@ -2,6 +2,15 @@ body {
 	margin:0; padding:0;
 }
 
+
+
+
+/* Header */
+#elections {
+  font-weight: 400;
+  color: #3d3d3d;
+}
+
 .main-container {
 	display: flex;
 	flex-wrap: wrap;
