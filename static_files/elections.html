@@ -2,8 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/voteApp.css">
     <link rel="stylesheet" type="text/css" href="css/elections.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>To the polls!</title>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
@@ -15,15 +17,39 @@
 
   </head>
   <body>
+
     <div class="header">
-      <img class="logo" src="http://via.placeholder.com/100x50">
-      <ul>
-        <a href="voteApp.html"><li>Find Your Candidate</li></a>
-        <a href="elections.html"><b><li>Vote</li></b></a>
-        <a href="debate.html"><li>Debate</li></a>
-      </ul>
-      <div class="cd-button">Create Discussion</div>
-      <img class="profile-icon">
+      <div class="menu">
+
+        <!-- Menu -->
+        <ul class="nav-container">
+          <a href="voteApp.html"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
+          <a href="voteApp.html"><li class="nav-item" id="home">Home</li></a>
+          <a href="elections.html"><li class="nav-item" id="elections">Elections</li></a>
+          <a href="debate.html"><li class="nav-item" id="debate">Debate</li></a>
+
+          <!-- Right Portion of the Menu -->
+          <ul class="right-menu">
+
+            <li class="menu-buttons">
+              <button class="debate-button">Create a Debate</button>
+            </li>
+
+            <li class="menu-buttons">
+              <i class="material-icons" id="favorite">favorite</i>
+            </li>
+
+            <li class="menu-buttons">
+              <div class="profile"></div>
+            </li>
+
+          </ul>
+
+        </ul>
+
+        
+        
+      </div>
     </div>
 
 

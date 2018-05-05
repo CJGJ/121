@@ -1,9 +1,14 @@
+* {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+
 .main-container {
 	width: 90%;
 	margin: auto;
-	margin-top: 120px;
 }
-
 
 .top-content {
 	width: 100%;
@@ -78,9 +83,6 @@ ul {
 	list-style: none;
 }
 
-li {
-	margin-top: 30px;
-}
 
 .petitionButton {
 	height: 50px;
