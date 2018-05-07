@@ -1,0 +1,149 @@
+* {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafcfd;
+}
+
+
+/*** Header */
+
+.header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 0.5px solid #D8D8D8;
+  background-color: white;
+}
+
+.menu {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 15px;
+}
+
+.nav-item {
+  display: inline-block;
+  color: #a9b0b8;
+  font-weight: 300;
+  margin-left: 40px;
+  font-size: 1.1em;
+}
+
+.nav-item:hover {
+  color: #3d3d3d;
+  transition: 0.3s;
+}
+
+#logo {
+  margin-left: 0px;
+}
+
+#logo img{
+  width: 100px;
+}
+
+#home {
+  margin-left: 60px;
+}
+
+/*** Right Menu ***/
+.right-menu {
+  float: right;
+  display: inline-block;
+}
+
+.menu-buttons {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.debate-button {
+  position: relative;
+  bottom: 30px;
+  padding: 9px 16px 8px 16px;
+  border-radius: 4px;
+  border-color: #52a3ff;
+  color: #52a3ff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.debate-button:hover {
+  color: white;
+  background-color: #52a3ff;
+  transition: 0.3s;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: #757575;
+}
+
+#favorite {
+  position: relative;
+  bottom: 25px;
+}
+
+#favorite:hover {
+  color: red;
+  transition: 0.3s;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3d3d3d;
+  position: relative;
+  bottom: 10px;
+  background-image: url('../images/mark.jpg');
+  background-size: cover;
+  /*border: solid 0.5px #52a3ff;*/
+}
+
+
+/* Main Container */
+.main-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

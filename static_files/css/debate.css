@@ -1,20 +1,18 @@
-body {
-    font:12px arial;
-    color: #222;
-    text-align:center;
-    padding:35px; }
-
 form, p, span {
     margin:0;
     padding:0; }
-
-input { font:12px arial; }
 
 a {
     color:#0000FF;
     text-decoration:none; }
 
     a:hover { text-decoration:underline; }
+
+
+#debate {
+  font-weight: 400;
+  color: #3d3d3d;
+}
 
 #wrapper, #loginform {
     margin:0 auto;
@@ -54,37 +52,6 @@ a {
 
 .msgln { margin:0 0 2px 0; }
 
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto;
-  background-color: #DDDDDD;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #555555;
-
-  position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-
-.header .logo {
-  width: 100px;
-}
-
-.header ul {
-  width: 60%;
-  padding-left: 30px;
-}
-
-.header li {
-  color: #555555;
-  display: inline-block;
-  text-decoration: none;
-  padding-right: 30px;
-}
 
 .cd-button {
   width: 150px;
@@ -97,8 +64,3 @@ a {
   padding-top: 5px;
 }
 
-.header .profile-icon {
-  width: 50px;
-  padding-left: 20px;
-  float: right;
-}

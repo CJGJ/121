@@ -7,19 +7,23 @@
 
 ## UI Skeleton:
 
-![Login Screen](link here)
+Our UI Changed by a lot due to the fact that we shifted our idea again. Hopefully this is the idea that we're going to stick with but because we had to do everything from scratch, the UI is a bit rough.
+
+![Login Screen](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot.png)
 - User logs in using existing email and password. We will set up a signup page later on and will allow the user to connect to different social media platforms.
 
-![Find a Representative](link here)
-- 
-![Representative](link here)
-- 
+![Find a Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot1.png)
+- Here users can find their representative between by city and can see how they can contact them.
 
-![Elections](link here)
-- 
+![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot2.png)
+![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot3.png)
+- Can see more details regarding their representative. Can see comments and view news related to the rep. Uses news api for data.
 
-![Debate](link here)
-- 
+![Elections](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot4.png)
+- Shows a map and possible election dates. Shows location of these elections.
+
+![Debate](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot5.png)
+- Will be more complex in the future. We want users to create discussion and debates in this platform. Users can post these topics and questions and people can take sides/comment.
 
 ## User Privacy:
 
