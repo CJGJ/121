@@ -20,10 +20,10 @@ function initializePage() {
 			dataType: 'json',
 			success: function(candidates) {
 					console.log("google api loaded");
+          console.log(candidates);
           $.each(candidates.contests, function(i, candidate){
             $candidates.append(`<li>Representatives: <b>${candidates.contests[i].candidates[0].name}</b></li>`);
             $candidates.append(`<p style="padding-left:20px">Party: <b>${candidates.contests[i].candidates[0].party}</b></p>`);
-            console.log(candidates);
 				  });
 			}
 		});
