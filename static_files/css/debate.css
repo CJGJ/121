@@ -1,20 +1,18 @@
-body {
-    font:12px arial;
-    color: #222;
-    text-align:center;
-    padding:35px; }
-
 form, p, span {
     margin:0;
     padding:0; }
-
-input { font:12px arial; }
 
 a {
     color:#0000FF;
     text-decoration:none; }
 
     a:hover { text-decoration:underline; }
+
+
+#debate {
+  font-weight: 400;
+  color: #3d3d3d;
+}
 
 #wrapper, #loginform {
     margin:0 auto;
@@ -53,3 +51,16 @@ a {
 .logout { float:right; }
 
 .msgln { margin:0 0 2px 0; }
+
+
+.cd-button {
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #555555;
+  color: #555555;
+  float: right;
+  text-align: center;
+  padding-top: 5px;
+}
+

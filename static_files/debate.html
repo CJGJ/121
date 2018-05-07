@@ -8,14 +8,47 @@
       <!--  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' /> -->
         <link rel="stylesheet" href="/css/debate.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     </head>
     <body>
-      <div class="header">
-        <center>
-          <h1>Debate</h1>
-        </center>
-      </div>
 
+    <div class="header">
+      <div class="menu">
+
+        <!-- Menu -->
+        <ul class="nav-container">
+          <a href="voteApp.html"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
+          <a href="voteApp.html"><li class="nav-item" id="home">Home</li></a>
+          <a href="elections.html"><li class="nav-item" id="elections">Elections</li></a>
+          <a href="debate.html"><li class="nav-item" id="debate">Debate</li></a>
+
+          <!-- Right Portion of the Menu -->
+          <ul class="right-menu">
+
+            <li class="menu-buttons">
+              <button class="debate-button">Create a Debate</button>
+            </li>
+
+            <li class="menu-buttons">
+              <i class="material-icons" id="favorite">favorite</i>
+            </li>
+
+            <li class="menu-buttons">
+              <div class="profile"></div>
+            </li>
+
+          </ul>
+
+        </ul>
+
+        
+        
+      </div>
+    </div>
+
+    </center><h1>Debate</h1></center>
     <div class="chat"></div>
 
     <form name="message" action="">
