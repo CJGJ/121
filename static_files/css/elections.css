@@ -224,3 +224,14 @@ a:hover
 	border-bottom: 1px solid #555;
 	padding-bottom: 15px;
 }
+
+.vi-button {
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #555555;
+  color: #555555;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+}
