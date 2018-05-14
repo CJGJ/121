@@ -2,15 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
+    <!-- stylesheets for page -->
     <link rel="stylesheet" type="text/css" href="css/elections.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+
     <title>To the polls!</title>
+
+    <!-- MapBox APIs -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+
     <!-- script src="http://code.jquery.com/jquery-1.11.0.min.js"></script -->
     <!-- script src='js/news.js'></script-->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -20,6 +27,7 @@
   </head>
   <body>
 
+    <!-- Navigation Bar -->
     <div class="header">
       <div class="menu">
 
@@ -49,21 +57,16 @@
 
         </ul>
 
-
-
       </div>
     </div>
 
 
     <div class="main-container">
         <div id="news-feed-container">
-
           <div class="content-container">
-
+            <h1 class='geocoder_title'>Elections Near You</h1>
             <div class="search-container">
-  <!--            <input id="electionBox" type="text" size="20" placeholder="Location" />
-              <button id="searchButton">Get Elections</button> -->
-               <div id='searchButton' class='geocoder' size='20'></div>
+               <div id='searchButton' class='geocoder' size='20' ></div>
             </div>
 
             <div class="electionContent">
@@ -128,13 +131,14 @@
               }
           ]
       };
+
       var map = new mapboxgl.Map({
           container: 'map', // container id
           style: 'mapbox://styles/mapbox/streets-v9', //hosted style id
           center: [-117.2340, 32.8801], // starting position
           zoom: 12 // starting zoom
       });
-      // add markers to map
+      /*// add markers to map
       geojson.features.forEach(function(marker) {
           // create a DOM element for the marker
           var el = document.createElement('div');
@@ -151,57 +155,23 @@
               .setPopup(popup)
               .addTo(map);
       });
+      */
 
+      //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
       });
-
-      //map.addControl(geocoder);
       document.getElementById('searchButton').appendChild(geocoder.onAdd(map));
 
-      /*var geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
+      //on user pressing enter on the geocoder bar,
+      map.on('load', function() {
+
+        geocoder.on('result', function(ev) {
+        //  map.getSource('single-point').setData(ev.result.geometry);
+          console.log(ev.result.place_name);
+        });
       });
 
-      document.getElementById('searchButton').appendChild(geocoder.onAdd(map));
-      */
     </script>
   </body>
 </html>
-
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8' />
-    <title>Add a geocoder</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-    </style>
-</head>
-<body>
-
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
-<div id='map'></div>
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiamNsb28iLCJhIjoiY2pnYmZqOHZwOHdmZzMzbXNrODFlazFzdCJ9.pBURsfywrYboZxfBEOL5sA';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-79.4512, 43.6568],
-    zoom: 13
-});
-
-map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
-}));
-</script>
-
-</body>
-</html> -->

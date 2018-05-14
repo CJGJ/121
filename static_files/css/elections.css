@@ -8,12 +8,19 @@ body {
   width:50%;
   left:32%;
   margin-left:-25%;
-  top:100px;
+  top:120px;
 /*	right: 500px; */
 }
 
-
-
+.geocoder_title {
+	position:absolute;
+	z-index:1;
+	width:50%;
+	left:31%;
+	margin-left:-25%;
+	top:75px;
+	color: black;
+}
 
 /* Header */
 #elections {
