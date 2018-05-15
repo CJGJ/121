@@ -21,7 +21,7 @@ function initializePage() {
 			url: 'https://www.googleapis.com/civicinfo/v2/voterinfo?key=AIzaSyBrvfLVDyTJ1Ar8EdM1aZda_9141qQcCh4&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS&electionId=2000',
 			dataType: 'json',
 			success: function(candidates) {
-					console.log(candidates);
+			console.log(candidates);
           $.each(candidates.contests, function(i, candidate){
 
           	const office = candidates.contests[i].office;
