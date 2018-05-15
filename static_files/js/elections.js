@@ -30,6 +30,7 @@ function initializePage() {
 		});
 	});
 
+  /*  */
   $('.vi-button').click((e) => {
 		console.log('Voter Info Query Button Clicked');
 

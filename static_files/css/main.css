@@ -70,6 +70,7 @@ body {
   color: #52a3ff;
   font-size: 14px;
   font-weight: 400;
+  background-color: white;
 }
 
 .debate-button:hover {
@@ -123,27 +124,3 @@ body {
   margin: auto;
   margin-top: 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
