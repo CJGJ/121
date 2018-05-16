@@ -2,8 +2,35 @@ body {
 	margin:0; padding:0;
 }
 
+.geocoder {
+	position:absolute;
+  z-index:1;
+  width:50%;
+  left:32%;
+  margin-left:-25%;
+  top:120px;
+/*	right: 500px; */
+}
 
+.geocoder_title {
+	position:absolute;
+	z-index:1;
+	width:50%;
+	left:28%;
+	margin-left:-25%;
+	top:75px;
+	color: black;
+}
 
+.choose_election_title {
+	position:absolute;
+	z-index:1;
+	width:50%;
+	left:36%;
+	margin-left:-25%;
+	top:75px;
+	color: black;
+}
 
 /* Header */
 #elections {
@@ -201,6 +228,7 @@ a:hover
 
 #searchButton {
   height: 30px;
+	width: 50%;
 }
 
 #electionBox {
