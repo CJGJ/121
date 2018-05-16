@@ -73,9 +73,9 @@
 
             <!-- Content for search bar -->
             <div class="electionContent">
-              <div class="election-id"></div>
-              <div class="election-name"></div>
-              <div class="election-date"></div>
+              <div class="election-id"></div> <!-- polling address -->
+              <div class="election-name"></div> <!-- polling name-->
+              <div class="election-date"></div> <!-- polling hours---->
             </div>
 
             <div class="pollingContent">
@@ -172,6 +172,10 @@
         geocoder.on('result', function(ev) {
         //  map.getSource('single-point').setData(ev.result.geometry);
           console.log(ev.result.place_name);
+
+
+          const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
+          locationCall(pollURL, ev);
         });
       });
 
