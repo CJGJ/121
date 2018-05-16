@@ -21,6 +21,7 @@ function initializePage() {
 			url: url,
 			dataType: 'json',
 			success: function(data) {
+				console.log(data);
 				$.each(data.elections, function(i, election){
 					const html = '<div class="election-name">' + election.name + '</div><div class="election-id">ID : '
             + election.id + '</div><div class="electionDay">' + election.electionDay + '</div>';
