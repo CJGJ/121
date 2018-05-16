@@ -16,7 +16,17 @@ body {
 	position:absolute;
 	z-index:1;
 	width:50%;
-	left:31%;
+	left:28%;
+	margin-left:-25%;
+	top:75px;
+	color: black;
+}
+
+.choose_election_title {
+	position:absolute;
+	z-index:1;
+	width:50%;
+	left:36%;
 	margin-left:-25%;
 	top:75px;
 	color: black;
