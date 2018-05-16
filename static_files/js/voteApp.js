@@ -21,13 +21,6 @@ function initializePage() {
 			url: 'https://www.googleapis.com/civicinfo/v2/voterinfo?key=AIzaSyBrvfLVDyTJ1Ar8EdM1aZda_9141qQcCh4&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS&electionId=2000',
 			dataType: 'json',
 			success: function(candidates) {
-<<<<<<< HEAD
-					console.log("google api loaded");
-          console.log(candidates);
-          $.each(candidates.contests, function(i, candidate){
-            $candidates.append(`<li>Representatives: <b>${candidates.contests[i].candidates[0].name}</b></li>`);
-            $candidates.append(`<p style="padding-left:20px">Party: <b>${candidates.contests[i].candidates[0].party}</b></p>`);
-=======
 					console.log(candidates);
           $.each(candidates.contests, function(i, candidate){
 
@@ -64,7 +57,6 @@ function initializePage() {
             //$candidates.append(`<a href="representative.html"><li>Representatives: <b>${candidates.contests[i].candidates[0].name}</b></li></a>`);
             //$candidates.append(`<p style="padding-left:20px">Party: <b>${candidates.contests[i].candidates[0].party}</b></p>`);
             console.log(candidates.contests[i].candidates[0].name);
->>>>>>> 52442aff204b3605f3dcc430215edd7bfd54b26a
 				  });
 			}
 		});
