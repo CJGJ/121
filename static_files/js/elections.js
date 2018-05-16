@@ -15,6 +15,37 @@ function checkEnter(e) {
 	}
 }
 
+function locationCall(pUrl, ev) {
+	$.ajax({
+				type: 'GET',
+				url: pUrl,
+				data: {
+					'address': ev.result.place_name,
+					'electionId': chosenElection,
+					'key': 'AIzaSyAkklfRAMuZpLZK3Mp4tQvhttb00NHR260'
+				},
+				dataType: 'json',
+				success: function(data) {
+					console.log('we in this');
+
+					//console.log(data);
+					//$.each(data.pollingLocations, function(i, pollingLocations) {
+					//	const html = '<div class="election-name">' + data + '</div>';
+
+					let html = 0;
+
+					if (data.pollingLocations == undefined) {
+						html = "No current Polling Locations";
+					}
+					else {
+					 html = '<div class="election-name">' + data.pollingLocations.address.locationName + '</div><div class="election-id"> '+ data.pollingLocations.address + '</div><div class="electionDay">' + data.pollingLocations.pollingHours + '</div>';
+				  }
+					$(".electionContent").append(html);
+					//});
+				}
+			});
+}
+
 $(document).ready(function() {
 	initializePage();
 });
@@ -25,7 +56,7 @@ $(document).ready(function() {
 function initializePage() {
 		console.log("Javascript connected!");
 
-		const url = "https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyADkYE2PdLRu-ABMd763Qbu8YLzB4cRYQ8";
+		const url = "https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAkklfRAMuZpLZK3Mp4tQvhttb00NHR260";
 		const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
 
 		//gets all upcoming elections
@@ -64,11 +95,11 @@ function initializePage() {
 		});
 
 		//used when registered address is entered
-		$.ajax({
+/*		$.ajax({
 			type: 'GET',
 			url: pollURL,
 			data: {
-				'address': '4460 Pavlov Ave, San Diego, CA, 92122',
+				'address': ev.result.place_name,
 				'electionId': chosenElection
 			},
 			dataType: 'json',
@@ -76,6 +107,7 @@ function initializePage() {
 
 			}
 		});
+*/
 
 		$('.geocoder_title').hide();
 		$('.search-container').hide();
