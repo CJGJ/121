@@ -54,7 +54,7 @@ function locationCall(pUrl, ev) {
 						
 
 						console.log(fullAddress);
-						$(".electionContent").append(pollName);
+						$(".electionContent").append('<p class="locations">' + pollName + '<br>' + line1 + '<br>' + city + '<br>' + state + '<br>' + '</p>' );
 
 					    apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
 
@@ -107,15 +107,6 @@ function locationCall(pUrl, ev) {
 						  console.log(lat, lng);
 						});
 					}
-
-
-
-
-					
-
-					
-
-
 
 
 					//console.log(ev.result.place_name);
