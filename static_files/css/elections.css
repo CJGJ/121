@@ -4,7 +4,7 @@ body {
 
 .geocoder {
   z-index:1;
-  width:50%;
+  width:100%;
 /*	right: 500px; */
 }
 
@@ -16,6 +16,14 @@ body {
 	color: black;
 }
 
+.search-container {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.locations {
+  margin-top: 10px;
+}
 /* Header */
 #elections {
   font-weight: 400;
@@ -27,6 +35,7 @@ body {
 	flex-wrap: wrap;
   width: 100%;
 }
+
 
 
 #news-feed-container {
@@ -150,7 +159,7 @@ a:hover
 
 #searchButton {
   height: 30px;
-	width: 50%;
+	width: 100%;
 }
 
 #electionBox {
