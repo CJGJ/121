@@ -61,11 +61,11 @@
     </div>
 
 
-    <div class="main-container">
+    <div class="main-content-container">
         <div id="news-feed-container">
           <div class="content-container">
             <!-- Search Bar -->
-            <h1 class='geocoder_title'>Enter Registered Address</h1>
+            <h2 class='geocoder_title'>Enter Registered Address</h2>
             <h2 class='choose_election_title'>Choose Your Election</h2>
             <div class="search-container">
                <div id='searchButton' class='geocoder' size='20' ></div>
@@ -96,44 +96,6 @@
 
     <script>
       mapboxgl.accessToken = 'pk.eyJ1IjoiaGFpamFuIiwiYSI6ImNqZWt1aGUzNjQ1YnAydmxueGl4ejIxcXEifQ.BePDVwa3Jj_6B89oTQ0LNA';
-      var geojson = {
-          "type": "FeatureCollection",
-          "features": [
-              {
-                  "type": "Feature",
-                  "properties": {
-                      "message": "Foo",
-                      "iconSize": [60, 60]
-                  },
-                  "geometry": {
-                      "type": "Point",
-                      "coordinates": [-117.2340, 32.8801]
-                  }
-              },
-              {
-                  "type": "Feature",
-                  "properties": {
-                      "message": "Bar",
-                      "iconSize": [50, 50]
-                  },
-                  "geometry": {
-                      "type": "Point",
-                      "coordinates": [-117.25, 32.89]
-                  }
-              },
-              {
-                  "type": "Feature",
-                  "properties": {
-                      "message": "Baz",
-                      "iconSize": [40, 40]
-                  },
-                  "geometry": {
-                      "type": "Point",
-                      "coordinates": [-117.232, 32.8903]
-                  }
-              }
-          ]
-      };
 
       var map = new mapboxgl.Map({
           container: 'map', // container id
@@ -141,24 +103,8 @@
           center: [-117.2340, 32.8801], // starting position
           zoom: 12 // starting zoom
       });
-      /*// add markers to map
-      geojson.features.forEach(function(marker) {
-          // create a DOM element for the marker
-          var el = document.createElement('div');
-          el.className = 'marker';
-          el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-          el.style.width = marker.properties.iconSize[0] + 'px';
-          el.style.height = marker.properties.iconSize[1] + 'px';
-          el.style.borderRadius = '50%';
-          var popup = new mapboxgl.Popup()
-              .setText('Construction on the Washington Monument began in 1848.');
-          // add marker to map
-          new mapboxgl.Marker(el)
-              .setLngLat(marker.geometry.coordinates)
-              .setPopup(popup)
-              .addTo(map);
-      });
-      */
+
+      
 
       //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
@@ -171,7 +117,7 @@
 
         geocoder.on('result', function(ev) {
         //  map.getSource('single-point').setData(ev.result.geometry);
-          console.log(ev.result.place_name);
+          //console.log(ev.result.place_name);
 
 
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
@@ -180,5 +126,7 @@
       });
 
     </script>
+
+
   </body>
 </html>
