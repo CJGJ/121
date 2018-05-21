@@ -1,16 +1,21 @@
 {
   "name": "voteApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Integrates all the steps that it takes to be a competent voter",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CJGJ/121"
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "express-handlebars": "*",
     "material-design-icons": "^3.0.1",
     "sqlite3": "^4.0.0"
   }
