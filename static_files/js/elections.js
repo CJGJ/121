@@ -116,7 +116,6 @@ function locationCall(pUrl, ev) {
 
 
 					/*
-
 					if (data.pollingLocations == undefined) {
 						html = "No current Polling Locations";
 					}
@@ -124,7 +123,6 @@ function locationCall(pUrl, ev) {
 					 console.log(data.pollingLocations.address);
 					 html = '<div class="election-name">' + data.pollingLocations.address + '</div><div class="election-id"> '+ data.pollingLocations.address + '</div><div class="electionDay">' + data.pollingLocations.pollingHours + '</div>';
 				  }
-
 				  */
 
 					//});
@@ -140,23 +138,18 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("Javascript connected!");
+		console.log("Javascript connected!");
 
-	let url = "https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyADkYE2PdLRu-ABMd763Qbu8YLzB4cRYQ8";
-	//const url = "https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAkklfRAMuZpLZK3Mp4tQvhttb00NHR260";
-	//const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
-
-	$('#searchButton').click((e) => {
-		e.preventDefault();
-		console.log('Search Button Clicked');
-
+		const url = "https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyAkklfRAMuZpLZK3Mp4tQvhttb00NHR260";
+		const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
 
 		//gets all upcoming elections
 		$.ajax({
 			type: 'GET',
 			url: url,
 			dataType: 'json',
-			success: (data) => {
+			success: function(data) {
+				//console.log(data);
 				$.each(data.elections, function(i, election){
 					//places a new button with an election onscreen
 					console.log(election);
@@ -201,7 +194,6 @@ function initializePage() {
 			},
 			dataType: 'json',
 			success: function(pollData) {
-
 			}
 		});
 */
@@ -209,24 +201,5 @@ function initializePage() {
 		$('.geocoder_title').hide();
 		$('.search-container').hide();
 
-
-  /*  */
-  $('.vi-button').click((e) => {
-		console.log('Voter Info Query Button Clicked');
-
-    let address = "1263%20Pacific%20Ave.%20Kansas%20City%20KS";
-    let electionID = 2000;
-
-    url = "https://www.googleapis.com/civicinfo/v2/voterinfo?key=AIzaSyADkYE2PdLRu-ABMd763Qbu8YLzB4cRYQ8&address=" + address + "&electionId=" + electionID;
-
-		$.ajax({
-			type: 'GET',
-			url: url,
-			dataType: 'json',
-			success: (data) => {
-				console.log(data);
-			}
-		});
-	});
 
 }

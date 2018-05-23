@@ -40,8 +40,8 @@ app.set('views', __dirname + '/views');
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 
-// set file path for static files to '/static_files'
-app.use(express.static(path.join(__dirname, '/static_files')));
+// set file path for static files to '/static_files/'
+app.use(express.static(path.join(__dirname, '/static_files/')));
 
 /*
    // send the rendered view to the client
@@ -96,14 +96,33 @@ app.get('/', (req, res) => {
   console.log('GET home page')
   res.render('voteApp');
 });
-//app.get('/representative/:name', representatives.view);
 
+app.get('/representative', (req, res) => {
+  console.log('GET representative page');
+  res.render('representative');
+});
+
+//app.get('/representative/:name', representatives.view);
 app.get('/representative/:name', (req, res) => {
   const name = req.params.name;
   console.log('GET page for ' + name);
   res.render('representative', {"name" : name});
 });
 
+app.get('/debate', (req, res) => {
+  console.log('GET debate page')
+  res.render('debate');
+});
+
+app.get('/debateTopic', (req, res) => {
+  console.log('GET debateTopic page')
+  res.render('debateTopic');
+});
+
+app.get('/elections', (req, res) => {
+  console.log('GET elections page')
+  res.render('elections');
+});
 
 
 
