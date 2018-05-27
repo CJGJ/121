@@ -13,15 +13,13 @@ We refined our front end a bit more compared to the skeleton from last milestone
 ![Login Screen](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot.png)
 - User logs in using existing email and password. We will set up a signup page later on and will allow the user to connect to different social media platforms.
 
-![Find a Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot1.png)
+![Find a Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot3M5.png)
 - Here users can find their representative between by city and can see how they can contact them.
 
-![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot2.png)
-![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot3.png)
+![Representative](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot5M5.png)
 - Can see more details regarding their representative. Can see comments and view news related to the rep. Uses news api for data.
 
-![Elections](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/elections_screenshot1.png)
-![Elections pt. 2](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/elections_screenshot2.png)
+![Elections](https://github.com/CambridgeGuolytica/121/blob/master/static_files/images/screenshot4M5.png)
 - Shows a map and future election dates. Then uses user's registered location to show polling places nearby.
 - In the future, we plan on fixing the styling for this page to make the available buttons fit the theme of the rest of the webpage. We also plan to do full user/error testing on the polling locations feature, as the future elections and location features limit the amount of polling locations that our team can test.
 
