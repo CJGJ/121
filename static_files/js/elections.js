@@ -45,6 +45,7 @@ function locationCall(pUrl, ev) {
 					let locationData = data.pollingLocations;
 
 					for (const e of locationData) {
+						let counter = 1;
 						const pollName = e.address.locationName;
 						const line1 = e.address.line1 + ', ';
 						const city = e.address.city + ' ';
@@ -54,7 +55,7 @@ function locationCall(pUrl, ev) {
 						
 
 						console.log(fullAddress);
-						$(".electionContent").append('<p class="locations">' + pollName + '<br>' + line1 + '<br>' + city + '<br>' + state + '<br>' + '</p>' );
+						$(".electionContent").append('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' );
 
 					    apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
 
@@ -69,9 +70,11 @@ function locationCall(pUrl, ev) {
 
 
 						  let geojsonTemplate = 
-							'{"type": "Feature","properties": {"message": "Foo","iconSize": [40, 40]},"geometry":{"type": "Point","coordinates": [' + lng + ',' + lat + ']}}, ';
+							'{type: "Feature",geometry":{"type": "Point","coordinates": [' + lng + ',' + lat + ']}, Properties: {marker-color: #f74545, marker-size: large, marker-symbol:' + counter +'}}, ';
 
 						  geoString = geoString + geojsonTemplate;
+
+						  console.log(geojsonTemplate);
 
 						  const test = [geoString];
 
@@ -86,25 +89,16 @@ function locationCall(pUrl, ev) {
 
 						console.log(geojson);
 
-						 for(const p of geojson.features) {
-						 	 console.log(p);
-					          var el = document.createElement('div');
-					          el.className = 'marker';
-					          el.style.backgroundImage = 'url(https://placekitten.com/g/40/40)';
-					          el.style.width = 40 + 'px';
-					          el.style.height = 40 + 'px';
-					          el.style.borderRadius = '50%';
-					          var popup = new mapboxgl.Popup()
-					              .setText('Construction on the Washington Monument began in 1848.');
-					          // add marker to map
-					          new mapboxgl.Marker(el)
-					              .setLngLat(coordinates)
-					              .setPopup(popup)
-					              .addTo(map);
-						 }
+						const marker = new mapboxgl.Marker();
+
+						marker.setLngLat(coordinates);
+						marker.addTo(map);
+
 						
 
 						  console.log(lat, lng);
+
+						  counter = counter + 1;
 						});
 					}
 
@@ -155,7 +149,7 @@ function initializePage() {
 				$.each(data.elections, function(i, election){
 					//places a new button with an election onscreen
 					console.log(election);
-					const html = '<button class="election-button" id="' + election.id + '">' + election.name + '<br>' + election.id + '<br>' + election.id + '<br>' + election.electionDay + '</button>';
+					const html = '<div class="election-button" id="' + election.id + '"> <h3>' + election.name + '</h3>'  + '<p>Election Date: ' + election.electionDay + '</p>' + '<p>Election ID: '  + election.id + '</p>' + '<br>' + '</div>';
           			$(".electionContent").append(html);
 
 					electionArray.push(election.id);
