@@ -3,6 +3,14 @@
 let electionArray = [];
 let chosenElection = 0;
 
+//variables for fit bounds box
+let boxLat_s = 0;
+let boxLong_s = 0;
+let boxLat_e = 0;
+let boxLong_e = 0;
+
+let boundArray = new Array(4);
+
 /**
 * checks if the Enter key is pressed
 */
@@ -14,10 +22,6 @@ function checkEnter(e) {
 		return true;
 	}
 }
-
-
-
-
 
 function locationCall(pUrl, ev) {
 	$.ajax({
@@ -44,6 +48,12 @@ function locationCall(pUrl, ev) {
 
 					let locationData = data.pollingLocations;
 
+
+
+					console.log('gang gang: ' + locationData.length);
+
+					//let ctrBounds = 0;
+
 					for (const e of locationData) {
 						let counter = 1;
 						const pollName = e.address.locationName;
@@ -52,9 +62,13 @@ function locationCall(pUrl, ev) {
 						const state = e.address.state;
 
 						const fullAddress = line1 + city + state;
-						
+
 
 						console.log(fullAddress);
+
+						var popupDesc = new mapboxgl.Popup({offset: 25}).setText('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>');
+
+						//let popupDesc = '<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>';
 						$(".electionContent").append('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' );
 
 					    apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
@@ -65,12 +79,23 @@ function locationCall(pUrl, ev) {
 						  const lng = response.results[0].location.lng;
 						  const lat = response.results[0].location.lat;
 
+						/*	if (ctrBounds==1) {
+								boundArray[0] = lat;
+								boundArray[1] = lng;
+							//	console.log('starting: ' + boxLat_s + ' ' + boxLong_s);
+							}
+							else if(ctrBounds==locationData.length) {
+								boundArray[2] = lat;
+								boundArray[3] = lng;
+							//	console.log('ending: ' + boxLat_e + ' ' + boxLong_e);
+							}
+						*/
 
 						  const coordinates = [lng, lat];
 
 
-						  let geojsonTemplate = 
-							'{type: "Feature",geometry":{"type": "Point","coordinates": [' + lng + ',' + lat + ']}, Properties: {marker-color: #f74545, marker-size: large, marker-symbol:' + counter +'}}, ';
+						  let geojsonTemplate =
+							'{type: "Feature",geometry":{"type": "Point","coordinates": [' + lng + ',' + lat + ']}, Properties: {description: ' + '<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' + 'marker-color: #f74545, marker-size: large, marker-symbol:' + counter +'}}, ';
 
 						  geoString = geoString + geojsonTemplate;
 
@@ -78,8 +103,7 @@ function locationCall(pUrl, ev) {
 
 						  const test = [geoString];
 
-
-						  const geojson = 
+						  const geojson =
 							{
 							          "type": "FeatureCollection",
 							          "features": [
@@ -89,23 +113,47 @@ function locationCall(pUrl, ev) {
 
 						console.log(geojson);
 
-						const marker = new mapboxgl.Marker();
+						// create DOM element for the marker
+						var el = document.createElement('div');
+						el.id = 'marker' + counter;
+
+
+					//	const marker = new mapboxgl.Marker();
+						let marker = new mapboxgl.Marker(el);
+
 
 						marker.setLngLat(coordinates);
+						marker.setPopup(popupDesc);
 						marker.addTo(map);
 
-						
+/*						$('#marker' + counter).click(function()
+   						{
+      					popupDesc.addTo(map);
+   						}
+						);
+*/
+
+
+					/*	new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(popupDesc)
+            .addTo(map);
+						*/
+
 
 						  console.log(lat, lng);
 
 						  counter = counter + 1;
 						});
+					//	ctrBounds++;
+					//	console.log('ctrB: ' + ctrBounds);
 					}
+
 
 
 					//console.log(ev.result.place_name);
 
-					
+
 
 
 
@@ -120,8 +168,30 @@ function locationCall(pUrl, ev) {
 				  }
 
 				  */
-					
+
 					//});
+				/*	document.getElementById('searchButton').keypress(function(e) {
+    				map.fitBounds([[
+        				boxLat_s,
+        				boxLong_s
+    					], [
+        				boxLat_e,
+        				boxLong_e
+    					]]);
+						}); */
+				//success line
+
+			/*	map.fitBounds([[
+						boundArray[0],
+						boundArray[1]
+					], [
+						boundArray[2],
+						boundArray[3]
+					]]);
+				*/
+
+			//	return boundArray;
+
 				}
 			});
 }

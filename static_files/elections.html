@@ -103,7 +103,7 @@
           zoom: 12 // starting zoom
       });
 
-      
+
 
       //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
@@ -120,7 +120,27 @@
 
 
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
+
           locationCall(pollURL, ev);
+
+          /*let arr = new Array(4);
+          arr = locationCall(pollURL, ev);
+          if (arr == null) {
+            console.log('what the');
+          }
+
+            console.log('hewwo: ' + arr[0] + ' ' + arr[1]);
+            console.log('hewwo2: ' + arr[2] + ' ' + arr[3]);
+    				map.fitBounds([[
+        				arr[0],
+        				arr[1]
+    					], [
+        				arr[2],
+        			  arr[3]
+    					]]);
+          */
+
+
         });
       });
 
