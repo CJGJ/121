@@ -63,12 +63,14 @@ function locationCall(pUrl, ev) {
 
 						const fullAddress = line1 + city + state;
 
+						const hours = e.pollingHours;
+
 
 						console.log(fullAddress);
 
 						//var popupDesc = new mapboxgl.Popup({offset: 25}).setText('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>');
 
-						let popupDesc =  '<h3 class="locations">' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>';
+						let popupDesc = '<h4 class="locations">' + hours + '</h4>' + '<h3 class="locations">' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>';
 						$(".electionContent").append('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' );
 
 					    apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
