@@ -68,22 +68,21 @@
             <h2 class='geocoder_title'>Enter Registered Address</h2>
             <h2 class='choose_election_title'>Choose Your Election</h2>
             <div class="search-container">
-               <div id='searchButton' class='geocoder' size='20' ></div>
+               <div id='searchButton' class='geocoder' size='20' >7571 Chula Vista Dr Citrus Heights</div>
             </div>
 
             <!-- Content for search bar -->
-            <div class="electionContent">
+            <ol class="electionContent">
               <div class="election-id"></div> <!-- polling address -->
               <div class="election-name"></div> <!-- polling name-->
               <div class="election-date"></div> <!-- polling hours---->
-            </div>
+            </ol>
 
             <div class="pollingContent">
             <!--  <div class="election-id"></div>
               <div class="election-name"></div>
               <div class="election-date"></div>
             -->
-              <button class="election-button"></button>
             <!--  <div class="election-id"></div> -->
             </div>
           </div>
@@ -103,6 +102,8 @@
           zoom: 12 // starting zoom
       });
 
+
+
       //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
@@ -114,7 +115,27 @@
         //  map.getSource('single-point').setData(ev.result.geometry);
           //console.log(ev.result.place_name);
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
+
           locationCall(pollURL, ev);
+
+          /*let arr = new Array(4);
+          arr = locationCall(pollURL, ev);
+          if (arr == null) {
+            console.log('what the');
+          }
+
+            console.log('hewwo: ' + arr[0] + ' ' + arr[1]);
+            console.log('hewwo2: ' + arr[2] + ' ' + arr[3]);
+    				map.fitBounds([[
+        				arr[0],
+        				arr[1]
+    					], [
+        				arr[2],
+        			  arr[3]
+    					]]);
+          */
+
+
         });
       });
     </script>

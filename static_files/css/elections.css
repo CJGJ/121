@@ -10,20 +10,29 @@ body {
 
 .geocoder_title {
 	color: black;
+  width: 90%;
+  margin: auto;
 }
 
 .choose_election_title {
 	color: black;
+  margin-left: 20px;
 }
 
 .search-container {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   margin-top: 30px;
+
 }
 
 .locations {
-  margin-top: 10px;
+  margin-top: 30px;
+  color: #3d3d3d;
 }
+
+
+
 /* Header */
 #elections {
   font-weight: 400;
@@ -169,9 +178,9 @@ a:hover
 
 .electionContent {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 0px;
   width: 90%;
-  height: 400px;
+  height: 560px;
   overflow: auto;
 }
 
@@ -194,7 +203,6 @@ a:hover
 	font-size: 14px;
 	color: #555;
 	border-bottom: 1px solid #555;
-	padding-bottom: 15px;
 }
 
 .vi-button {
@@ -206,4 +214,27 @@ a:hover
   float: left;
   text-align: center;
   padding-top: 5px;
+}
+
+.election-button {
+  border: solid 1px #D8D8D8;
+  border-radius: 4px;
+  background-color: white;
+  padding: 10px 10px 0px 10px;
+  margin-top: 10px;
+}
+
+.election-button:hover {
+  transition: 0.3s;
+  border: solid 2px #52a3ff;
+  cursor: pointer;
+
+}
+
+.election-button h3 {
+  color: #3d3d3d;
+}
+
+.election-button p {
+  color: #757575;
 }
