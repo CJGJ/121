@@ -20,7 +20,7 @@ We refined our front end a bit more compared to the skeleton from last milestone
 ![Elections](static_files/images/autoFill.png)
 ![Elections](static_files/images/updatedList.png)
 ![Elections](static_files/images/mapMarkers.png)
-![Elections](static_files/images/mapBoxess.png)
+![Elections](static_files/images/mapBoxes.png)
 
 - Shows a map and future election dates. Then uses user's registered location to show polling places nearby.
 - In the future, we plan on fixing the styling for this page to make the available buttons fit the theme of the rest of the webpage. We also plan to do full user/error testing on the polling locations feature, as the future elections and location features limit the amount of polling locations that our team can test.
