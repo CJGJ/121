@@ -17,8 +17,6 @@ function checkEnter(e) {
 
 
 
-
-
 function locationCall(pUrl, ev) {
 	$.ajax({
 				type: 'GET',
@@ -51,12 +49,15 @@ function locationCall(pUrl, ev) {
 						const city = e.address.city + ' ';
 						const state = e.address.state;
 
+						const locID = 'loc' + counter;
+
 						const fullAddress = line1 + city + state;
 						
 
 						console.log(fullAddress);
-						$(".electionContent").append('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' );
+						$(".electionContent").append('<li class="locations id=' + locID + '">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ', ' + state + '<br>' + '</p>' + '</li>' );
 
+						//Geocoder API
 					    apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
 
 						$.get('https://api.geocod.io/v1.3/geocode?q='+ encodeURIComponent(fullAddress) +'&api_key=' + encodeURIComponent(apiKey), function (response) {
@@ -90,8 +91,11 @@ function locationCall(pUrl, ev) {
 						console.log(geojson);
 
 						const marker = new mapboxgl.Marker();
+						/* const popup = new mapboxgl.Popup({ offset: 25 })
+							.setText(fullAddress); */
 
 						marker.setLngLat(coordinates);
+						/* marker.setPopup(popup); */
 						marker.addTo(map);
 
 						
