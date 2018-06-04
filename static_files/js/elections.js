@@ -127,8 +127,8 @@ function locationCall(pUrl, ev) {
 
 
 						marker.setLngLat(coordinates);
-					 	//marker.setPopup(popupDesc);
-						marker.addTo(map);
+					 //	marker.setPopup(popupDesc);
+				//		marker.addTo(map);
 
 /*						$('#marker' + counter).click(function()
    						{
@@ -138,11 +138,46 @@ function locationCall(pUrl, ev) {
 */
 
 
-						new mapboxgl.Popup()
-			            .setLngLat(coordinates)
-			            .setHTML(popupDesc)
-			            .addTo(map);
+						/*let pu = new mapboxgl.Popup({
+							closeButton: false,
+							closeOnClick: false
+						});
+						*/
 
+						let pu = new mapboxgl.Popup();
+						pu.setLngLat(coordinates);
+            pu.setHTML(popupDesc);
+          //  pu.addTo(map);
+
+					marker.setPopup(pu);
+					marker.addTo(map);
+
+
+
+/*
+						map.on('mouseenter', function(e) {
+							//Change cursor style as a UI indicator
+							map.getCanvas().style.cursor = 'pointer';
+
+							let checkCoordinates = e.features[0].geometry.coordinates.slice();
+							let desc = e.features[0].properties.description;
+
+							//Ensure that if the map is zoomed out such that multiple
+							//copies of the feature are visible, the popup appears
+							//over the copy being pointed to
+							while (Math.abs(lng - checkCoordinates[0]) > 180) {
+								checkCoordinates[0] += e.lngLat.lng > checkCoordinates[0] ? 360 : -360;
+							}
+
+							//populate popup and set coordinates based on feature found
+							pu.addTo(map);
+						});
+
+						map.on('mouseleave', function() {
+							map.getCanvas.style.cursor = '';
+							pu.remove();
+						});
+*/
 
 
 						  console.log(lat, lng);
