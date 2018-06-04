@@ -27,13 +27,43 @@
 //   nodemon server.js
 
 const express = require('express');
+const exphbs = require('express-handlebars');
+const handlebars = require('express-handlebars');
+const path = require('path');
+
 const app = express();
 
+// set file path for html code to '/views'
+app.set('views', __dirname + '/views');
+
+// set template engine to 'handlebars'
+app.engine('handlebars', handlebars());
+app.set('view engine', 'handlebars');
+
+// set file path for static files to '/static_files/'
+app.use(express.static(path.join(__dirname, '/static_files/')));
+
+/*
+   // send the rendered view to the client
+  res.render('index');
+
+  // if a callback is specified, the rendered HTML string has to be sent explicitly
+  res.render('index', function(err, html) {
+    res.send(html);
+  });
+
+  // pass a local variable to the view
+  res.render('user', { name: 'Tobi' }, function(err, html) {
+    // ...
+  });
+*/
 
 // use this library to interface with SQLite databases: https://github.com/mapbox/node-sqlite3
 const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('pets.db');
+const db = new sqlite3.Database('voters.db');
 
+//const voteApp = require('./routes/voteApp');
+//const representatives = require('./routes/representative');
 const login = require('./static_files/js/login');
 
 
@@ -49,6 +79,13 @@ const login = require('./static_files/js/login');
 // Learn more: http://expressjs.com/en/starter/static-files.html
 app.use(express.static('static_files'));
 
+
+// holds data from POST requests
+let data = {
+  elections: []
+};
+
+
 app.get('/voters', (req, res) => {
   db.all('SELECT name FROM voter_info', (err, rows) => {
     console.log(rows);
@@ -62,6 +99,46 @@ app.get('/voters', (req, res) => {
   res.render('login');
 });*/
 
+app.get('/', (req, res) => {
+  console.log('GET home page')
+  res.render('voteApp');
+});
+
+app.get('/representative', (req, res) => {
+  console.log('GET representative page');
+  res.render('representative');
+});
+
+//app.get('/representative/:name', representatives.view);
+app.get('/representative/:name', (req, res) => {
+  const name = req.params.name;
+  console.log('GET page for ' + name);
+
+  res.render('representative', {"name" : name});
+});
+
+app.get('/debate', (req, res) => {
+  console.log('GET debate page')
+  res.render('debate');
+});
+
+app.get('/debateTopic', (req, res) => {
+  console.log('GET debateTopic page')
+  res.render('debateTopic');
+});
+
+app.get('/elections', (req, res) => {
+  console.log('GET elections page')
+  res.render('elections');
+});
+
+app.post('/representative', (req, res) => {
+  console.log('POST contests to /representative');
+  const data = req.body.data;
+  //data.elections.pop();
+  data.elections.push(data);
+  //res.send(data);
+});
 
 
 
