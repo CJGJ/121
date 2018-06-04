@@ -26,17 +26,17 @@
 - login.html????
 
 **CSS**:
-- **main.css** - Contains all of the styling for common components in all the html files. 
-- **debate.css**
-- **elections.css**
-- **represenative.css**
-- **voteApp.css**
+- **main.css** - Contains all of the styling for common components in all the html files (header, font, color, buttons, etc.)
+- **debate.css** - Contains the styling for the debate.html page. It mostly styles the page so that it displays three cards in every row. Also styles the images and comment layout in the cards and modal. 
+- **elections.css** - Minimal styling - just styles the left hand portion of the elections.html file which displays the election IDs and addresses.
+- **represenative.css** - 
+- **voteApp.css** - 
 
 **JS**:
 - **debateTopic.js** - Is the core code for the functionality in the debate page. It connects to the firebase database in order to store all of the user inputs (debate topics and comments for each topic). It will also pull all of the data from this database adn renders/appends them to the debate.html page. 
-- elections.js 
-- representative.js
-- voteApp.js
+- **elections.js** - 
+- **representative.js** - 
+- **voteApp.js** -
 
 
 ## Video:
