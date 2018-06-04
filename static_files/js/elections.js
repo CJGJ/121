@@ -3,18 +3,6 @@
 let electionArray = [];
 let chosenElection = 0;
 
-/**
-* checks if the Enter key is pressed
-*/
-function checkEnter(e) {
-	if (e.keyCode == 13) {
-		return false;
-	}
-	else {
-		return true;
-	}
-}
-
 function locationCall(pUrl, ev) {
 	$.ajax({
 				type: 'GET',
