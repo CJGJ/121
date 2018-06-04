@@ -70,6 +70,7 @@
             <div class="search-container">
                 <!--7571 Chula Vista Dr Citrus Heights -->
                <div id='searchButton' class='geocoder' size='20' >115 Hearthstone Drive, American Canyon, CA </div>
+
             </div>
 
             <!-- Content for search bar -->
@@ -79,13 +80,7 @@
               <div class="election-date"></div> <!-- polling hours---->
             </ol>
 
-            <div class="pollingContent">
-            <!--  <div class="election-id"></div>
-              <div class="election-name"></div>
-              <div class="election-date"></div>
-            -->
-            <!--  <div class="election-id"></div> -->
-            </div>
+            <div class="pollingContent"></div>
           </div>
         </div>
 
@@ -114,15 +109,13 @@
       map.on('load', function() {
 
         geocoder.on('result', function(ev) {
-        //  map.getSource('single-point').setData(ev.result.geometry);
-          //console.log(ev.result.place_name);
-
-
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
-
           locationCall(pollURL, ev);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3527df033af781d6cf4617b1327b062112b155be
         });
       });
 

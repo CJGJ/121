@@ -3,26 +3,6 @@
 let electionArray = [];
 let chosenElection = 0;
 
-//variables for fit bounds box
-let boxLat_s = 0;
-let boxLong_s = 0;
-let boxLat_e = 0;
-let boxLong_e = 0;
-
-let boundArray = new Array(4);
-
-/**
-* checks if the Enter key is pressed
-*/
-function checkEnter(e) {
-	if (e.keyCode == 13) {
-		return false;
-	}
-	else {
-		return true;
-	}
-}
-
 function locationCall(pUrl, ev) {
 	$.ajax({
 				type: 'GET',
@@ -42,17 +22,7 @@ function locationCall(pUrl, ev) {
 					let geoString = '';
 					let test = '';
 
-					//console.log(data);
-					//$.each(data.pollingLocations, function(i, pollingLocations) {
-					//	const html = '<div class="election-name">' + data + '</div>';
-
 					let locationData = data.pollingLocations;
-
-
-
-					console.log('gang gang: ' + locationData.length);
-
-					//let ctrBounds = 0;
 
 					for (const e of locationData) {
 						let counter = 1;
@@ -67,160 +37,63 @@ function locationCall(pUrl, ev) {
 
 						const hours = e.pollingHours;
 
-
 						console.log(fullAddress);
 
 						let popupDesc = '<h4 class="locations">' + hours + '</h4>' + '<h3 class="locations">' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>';
 						$(".electionContent").append('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' );
 
-						//Geocoder API
-					    apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
+					  apiKey = 'e6f1858a8df5a11a86911c88fdcd6c1110f6105';
 
 						$.get('https://api.geocod.io/v1.3/geocode?q='+ encodeURIComponent(fullAddress) +'&api_key=' + encodeURIComponent(apiKey), function (response) {
-						  console.log(response.results);
+						console.log(response.results);
 
-						  const lng = response.results[0].location.lng;
-						  const lat = response.results[0].location.lat;
+						const lng = response.results[0].location.lng;
+						const lat = response.results[0].location.lat;
 
-						  const coordinates = [lng, lat];
+						const coordinates = [lng, lat];
 
 
-						  let geojsonTemplate =
+
+					  let geojsonTemplate =
 							'{type: "Feature",geometry":{"type": "Point","coordinates": [' + lng + ',' + lat + ']}, Properties: {description: ' + '<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' + 'marker-color: #f74545, marker-size: large, marker-symbol:' + counter +'}}, ';
 
-						  geoString = geoString + geojsonTemplate;
+						geoString = geoString + geojsonTemplate;
 
-						  console.log(geojsonTemplate);
+					  console.log(geojsonTemplate);
 
-						  const test = [geoString];
+					  const test = [geoString];
 
-						  const geojson =
-							{
-							          "type": "FeatureCollection",
-							          "features": [
-							              test
-							          ]
-							 };
-
-						console.log(geojson);
-
+					  const geojson =
+						{
+						          "type": "FeatureCollection",
+						          "features": [
+						              test
+						          ]
+						 };
 
 						// create DOM element for the marker
 						var el = document.createElement('div');
 						el.id = 'marker' + counter;
 
 
-					//	const marker = new mapboxgl.Marker();
+
 						let marker = new mapboxgl.Marker();
 
 
 						marker.setLngLat(coordinates);
-					 //	marker.setPopup(popupDesc);
-				//		marker.addTo(map);
-
-/*						$('#marker' + counter).click(function()
-   						{
-      					popupDesc.addTo(map);
-   						}
-						);
-*/
-
-
-						/*let pu = new mapboxgl.Popup({
-							closeButton: false,
-							closeOnClick: false
-						});
-						*/
 
 						let pu = new mapboxgl.Popup();
 						pu.setLngLat(coordinates);
             pu.setHTML(popupDesc);
-          //  pu.addTo(map);
 
-					marker.setPopup(pu);
-					marker.addTo(map);
+						marker.setPopup(pu);
+						marker.addTo(map);
 
-
-
-/*
-						map.on('mouseenter', function(e) {
-							//Change cursor style as a UI indicator
-							map.getCanvas().style.cursor = 'pointer';
-
-							let checkCoordinates = e.features[0].geometry.coordinates.slice();
-							let desc = e.features[0].properties.description;
-
-							//Ensure that if the map is zoomed out such that multiple
-							//copies of the feature are visible, the popup appears
-							//over the copy being pointed to
-							while (Math.abs(lng - checkCoordinates[0]) > 180) {
-								checkCoordinates[0] += e.lngLat.lng > checkCoordinates[0] ? 360 : -360;
-							}
-
-							//populate popup and set coordinates based on feature found
-							pu.addTo(map);
-						});
-
-						map.on('mouseleave', function() {
-							map.getCanvas.style.cursor = '';
-							pu.remove();
-						});
-*/
-
-
-						  console.log(lat, lng);
-
-						  counter = counter + 1;
-						});
-					//	ctrBounds++;
-					//	console.log('ctrB: ' + ctrBounds);
-					}
-
-
-
-					//console.log(ev.result.place_name);
-
-
-
-
-
-					/*
-
-					if (data.pollingLocations == undefined) {
-						html = "No current Polling Locations";
-					}
-					else {
-					 console.log(data.pollingLocations.address);
-					 html = '<div class="election-name">' + data.pollingLocations.address + '</div><div class="election-id"> '+ data.pollingLocations.address + '</div><div class="electionDay">' + data.pollingLocations.pollingHours + '</div>';
-				  }
-
-				  */
-
-					//});
-				/*	document.getElementById('searchButton').keypress(function(e) {
-    				map.fitBounds([[
-        				boxLat_s,
-        				boxLong_s
-    					], [
-        				boxLat_e,
-        				boxLong_e
-    					]]);
-						}); */
-				//success line
-
-			/*	map.fitBounds([[
-						boundArray[0],
-						boundArray[1]
-					], [
-						boundArray[2],
-						boundArray[3]
-					]]);
-				*/
-
-			//	return boundArray;
-
+						counter = counter + 1;
+					});
 				}
-			});
+			}
+		});
 }
 
 $(document).ready(function() {
@@ -274,26 +147,6 @@ function initializePage() {
 
 			}
 		});
-
-
-
-		//used when registered address is entered
-/*		$.ajax({
-			type: 'GET',
-			url: pollURL,
-			data: {
-				'address': ev.result.place_name,
-				'electionId': chosenElection
-			},
-			dataType: 'json',
-			success: function(pollData) {
-
-			}
-		});
-*/
-
 		$('.geocoder_title').hide();
 		$('.search-container').hide();
-
-
 }
