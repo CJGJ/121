@@ -48,7 +48,6 @@ function initializePage() {
 			});
 	});
 
-
 	$('#refreshFeed').click(function(e) {
 		e.preventDefault();
 		console.log('button clicked');
@@ -81,12 +80,34 @@ function initializePage() {
 		            <p class="title-rep">${office} | ${party}</p>
 		            <h2>${name}</h2>
 		            <p class="contact">${website}</p>
+
 		          </div>
 
 		          <!-- Button -->
 		          <div class="buttons-container">
-		            <a href="representative.html"><button class="representative-button" >More Info <i class="material-icons" id="right-icon">chevron_right</i> </button></a>
-		          </div>
+								<a href="#ex1" rel="modal:open"><button class="representative-button" >More Info <i class="material-icons" id="right-icon">chevron_right</i> </button></a>
+							</div>
+
+							<!-- Modal HTML embedded directly into document -->
+							<div id="ex1" class="modal">
+								<h4> ${office} </h4>
+								<h2> ${name}</h2>
+								<h4> ${party} </h4>
+								<a href="${website}"><h5>Visit Site</h5></a>
+
+
+								<div class="comment-container">
+									<h5>Be part of your political community! Enter any information regarding the candidate</h5>
+
+										<div class="input" id="chatsend">
+											<input type="textbox" id="chatbox" value=""><br>
+											<p class="send">Send</p>
+										</div>
+
+										<div id="chatContainer">
+										</div>
+							</div>
+
 		        </div>
           		`
           		);
@@ -100,4 +121,6 @@ function initializePage() {
 
   	console.log('test');
   });
+
+
 }

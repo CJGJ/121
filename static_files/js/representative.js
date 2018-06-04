@@ -45,10 +45,12 @@ function initializePage() {
 		});
 		*/
 	});
+
 	console.log('test');
 	//$('.clickMe').click(gotData);
 
   $('#chatsend').find('.send').click(sendText);
+	console.log("send clicked");
   $("#chatbox").on('keydown', function(e){
     if(e.keyCode === 13)
       sendText(e);
@@ -78,24 +80,3 @@ function sendText(e){
     document.getElementById('chatbox').value = '';
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
