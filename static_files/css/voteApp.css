@@ -26,6 +26,7 @@
   font-weight: 400;
   border-radius: 4px;
   border-color: #52a3ff;
+  background-color: white;
 }
 
 
@@ -238,7 +239,6 @@ div #ex1 {
   border-radius: 5px;
   border: 1px solid #555555;
   color: #555555;
-  float: right;
   text-align: center;
   padding-top: 5px;
 }

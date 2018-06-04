@@ -68,17 +68,24 @@
             <h2 class='geocoder_title'>Enter Registered Address</h2>
             <h2 class='choose_election_title'>Choose Your Election</h2>
             <div class="search-container">
-          <!--     <div id='searchButton' class='geocoder' size='20' >7571 Chula Vista Dr Citrus Heights</div> -->
+               <div id='searchButton' class='geocoder' size='20' ></div>
             </div>
 
             <!-- Content for search bar -->
-            <ol class="electionContent">
+            <div class="electionContent">
               <div class="election-id"></div> <!-- polling address -->
               <div class="election-name"></div> <!-- polling name-->
               <div class="election-date"></div> <!-- polling hours---->
-            </ol>
+            </div>
 
-            <div class="pollingContent"></div>
+            <div class="pollingContent">
+            <!--  <div class="election-id"></div>
+              <div class="election-name"></div>
+              <div class="election-date"></div>
+            -->
+              <button class="election-button"></button>
+            <!--  <div class="election-id"></div> -->
+            </div>
           </div>
         </div>
 
@@ -96,8 +103,6 @@
           zoom: 12 // starting zoom
       });
 
-
-
       //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
@@ -106,6 +111,8 @@
       //on user pressing enter on the geocoder bar,
       map.on('load', function() {
         geocoder.on('result', function(ev) {
+        //  map.getSource('single-point').setData(ev.result.geometry);
+          //console.log(ev.result.place_name);
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
           locationCall(pollURL, ev);
         });
