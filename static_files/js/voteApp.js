@@ -9,6 +9,9 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("Javascript connected!");
 
+
+	
+
 	//const url = "https://api.nytimes.com/svc/search/v2/candidatesearch.json?api-key=bebd5673446e40c0a0613cd3ea327a8d";
 	const $candidates = $('#candidates');
 	const $representatives_container = $('#representatives_container');
@@ -106,7 +109,7 @@ function initializePage() {
 
 										<div id="chatContainer">
 										</div>
-							</div>
+								</div>
 
 		        </div>
           		`
