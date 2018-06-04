@@ -82,18 +82,6 @@ function locationCall(pUrl, ev) {
 						  const lng = response.results[0].location.lng;
 						  const lat = response.results[0].location.lat;
 
-						/*	if (ctrBounds==1) {
-								boundArray[0] = lat;
-								boundArray[1] = lng;
-							//	console.log('starting: ' + boxLat_s + ' ' + boxLong_s);
-							}
-							else if(ctrBounds==locationData.length) {
-								boundArray[2] = lat;
-								boundArray[3] = lng;
-							//	console.log('ending: ' + boxLat_e + ' ' + boxLong_e);
-							}
-						*/
-
 						  const coordinates = [lng, lat];
 
 
