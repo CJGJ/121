@@ -5,7 +5,6 @@ body {
 .geocoder {
   z-index:1;
   width:100%;
-/*	right: 500px; */
 }
 
 .geocoder_title {
@@ -79,16 +78,6 @@ body {
 .header {
 	width: 100%;
 }
-
-/* MAP */
-/*
-.clickMe {
-  height: 30px;
-  width: 100px;
-  background-color: red;
-}
-*/
-/* Menu */
 
 body
 {
@@ -209,7 +198,7 @@ a:hover
   border: solid 1px #D8D8D8;
   border-radius: 4px;
   background-color: white;
-  padding: 10px 10px 0px 10px; 
+  padding: 10px 10px 0px 10px;
   margin-top: 10px;
 }
 
@@ -227,32 +216,3 @@ a:hover
 .election-button p {
   color: #757575;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
