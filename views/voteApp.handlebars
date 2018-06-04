@@ -77,12 +77,13 @@
   </div>
 
   <div class="main-container">
-    <h1 class="title">Find your candidate</h1>
+    <h1 class="title">Find candidates in your area</h1>
 
     <!-- SEARCH BAR -->
     <div class="searchContainer" style="width:900px;">
       <div align="center">
-        <input type="text" name="search" id="search" placeholder="Search Representatives" class="form-control"/>
+        <p>9500 Gilman Dr, La Jolla, CA 92093</p>
+        <input type="text" name="search" id="search" placeholder="Your Address" class="form-control"/>
       </div>
       <ul class="list-group" id="result"></ul>
     </div>
@@ -90,7 +91,7 @@
 
     <!--- LOAD REPS BUTTON -->
     <div class="reps">
-      <button id="refreshFeed">Load Reps</button>
+      <button id="search_reps">Search</button>
       <!--<ul id="candidates"></ul>-->
     </div>
 
@@ -106,7 +107,7 @@
 
           <div class="description-container">
             <p class="title-rep">Title | Party</p>
-            <h2>Name of Rep</h2>
+            <h2 id="rep-name">Name of Rep</h2>
             <p class="contact">Contact Info</p>
           </div>
 
@@ -125,8 +126,7 @@
 
 </body>
 
-
-<script src="/js/voteApp.js"></script>
+<script src="/js/rep_pages.js"></script>
 
 </html>
 

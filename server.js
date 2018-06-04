@@ -79,6 +79,13 @@ const login = require('./static_files/js/login');
 // Learn more: http://expressjs.com/en/starter/static-files.html
 app.use(express.static('static_files'));
 
+
+// holds data from POST requests
+let data = {
+  elections: []
+};
+
+
 app.get('/voters', (req, res) => {
   db.all('SELECT name FROM voter_info', (err, rows) => {
     console.log(rows);
@@ -106,6 +113,7 @@ app.get('/representative', (req, res) => {
 app.get('/representative/:name', (req, res) => {
   const name = req.params.name;
   console.log('GET page for ' + name);
+
   res.render('representative', {"name" : name});
 });
 
@@ -122,6 +130,14 @@ app.get('/debateTopic', (req, res) => {
 app.get('/elections', (req, res) => {
   console.log('GET elections page')
   res.render('elections');
+});
+
+app.post('/representative', (req, res) => {
+  console.log('POST contests to /representative');
+  const data = req.body.data;
+  //data.elections.pop();
+  data.elections.push(data);
+  //res.send(data);
 });
 
 
