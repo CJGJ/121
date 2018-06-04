@@ -139,9 +139,9 @@ function locationCall(pUrl, ev) {
 
 
 						new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(popupDesc)
-            .addTo(map);
+			            .setLngLat(coordinates)
+			            .setHTML(popupDesc)
+			            .addTo(map);
 
 
 
