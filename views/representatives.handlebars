@@ -1,3 +1,7 @@
+<!--
+Specific page that focuses on retrieving and displaying the candidates in a card format
+using the google civic info API
+-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -29,6 +33,12 @@
 
   </style>
 
+  <!-- MapBox APIs -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+
 </head>
 
 <body>
@@ -44,10 +54,10 @@
         <a href="/">
           <li class="nav-item" id="home">Home</li>
         </a>
-        <a href="elections.html">
+        <a href="/elections">
           <li class="nav-item" id="elections">Elections</li>
         </a>
-        <a href="debate.html">
+        <a href="/debate">
           <li class="nav-item" id="debate">Debate</li>
         </a>
 
@@ -73,32 +83,39 @@
   </div>
 
   <div class="main-container">
-    <h1 class="title">Find candidates in your area</h1>
+    <h1 class="title">Find Your Representatives</h1>
 
-    <!-- SEARCH BAR -->
+    <!-- SEARCH BAR
     <div class="searchContainer">
       <div class="search-container">
-        <p id="test">9500 Gilman Dr, La Jolla, CA 92093</p>
         <input type="text" name="search" id="search" placeholder="Your Address" class="form-control"/>
-        <!-- OFFICE DROP DOWN MENU 
+        <OFFICE DROP DOWN MENU>
         <div class="drop-menu-office">
           <select id="offices" align="center">
             <option value="all">All</option>
           </select>
         </div>
-        -->
       </div>
       <ul class="list-group" id="result"></ul>
     </div>
+    -->
+
+    <div class="search-container">
+      <!-- 7571 Chula Vista Dr Citrus Heights -->
+      <div id='searchButton' class='geocoder' size='20' align='center'></div>
+    </div>
+
+    <div class="map-container">
+        <div id='map'></div>
+    </div>
 
 
-    
-
-    <!--- LOAD REPS BUTTON -->
+    <!-- LOAD REPS BUTTON
     <div class="reps">
       <button id="search_reps" class="representative-button">Search</button>
-      <!--<ul id="candidates"></ul>-->
+      <ul id="candidates"></ul>
     </div>
+    -->
 
     <div id="representatives_container">
 
@@ -146,6 +163,31 @@ var config = {
 firebase.initializeApp(config);
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiaGFpamFuIiwiYSI6ImNqZWt1aGUzNjQ1YnAydmxueGl4ejIxcXEifQ.BePDVwa3Jj_6B89oTQ0LNA';
+  var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v9', //hosted style id
+      center: [-117.2340, 32.8801], // starting position
+      zoom: 12 // starting zoom
+  });
+
+  //adds the geocoder search bar to the page
+  var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  });
+  document.getElementById('searchButton').appendChild(geocoder.onAdd(map));
+  //on user pressing enter on the geocoder bar,
+  map.on('load', function() {
+    geocoder.on('result', function(ev) {
+      const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
+      locationCall(pollURL, ev);
+    });
+  });
+</script>
+
+
 <script src="../../js/rep_pages.js"></script>
 
 </html>
