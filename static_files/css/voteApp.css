@@ -51,7 +51,7 @@
 
 .card-container {
   width: calc((100% - 200px) / 3);
-  height: 400px;
+  height: 450px;
   margin-right: 50px;
   margin-top: 40px;
   border-radius: 5px 5px 5px 5px;
@@ -60,7 +60,7 @@
 
 .image-container {
   width: 100%;
-  height: 180px;
+  height: 270px;
   background-color: #ededed;;
   border-radius: 5px 5px 0px 0px;
   border: solid 0.5px #ededed;
@@ -68,7 +68,8 @@
 
 .official-image {
   width: 100%;
-  height: 100%;
+  background-size: cover;
+  background-position: center top;
 }
 
 #favorite-card {
@@ -184,79 +185,31 @@ div #ex1 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+#office {
   margin: auto;
-  background-color: #DDDDDD;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #555555;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
-.header .logo {
-  width: 100px;
-}
-
-.header ul {
-  width: 60%;
-  padding-left: 30px;
-}
-
-.header li {
-  color: #555555;
-  display: inline-block;
-  text-decoration: none;
-  padding-right: 30px;
-}
-
-.cd-button {
-  width: 150px;
-  height: 25px;
-  border-radius: 5px;
-  border: 1px solid #555555;
-  color: #555555;
+#test {
+  width: 100%;
   text-align: center;
-  padding-top: 5px;
+}
+
+.search-container {
+  width: 90%;
+  margin: auto;
 }
 
 
-.header .profile-icon {
-  width: 50px;
-  padding-left: 20px;
-  float: right;
-}
 
-.title {
-  margin-top: 100px;
-}
 
-*/
+
+
+
+
+
+
+
+
+
+
+

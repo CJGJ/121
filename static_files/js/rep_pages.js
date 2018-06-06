@@ -39,6 +39,7 @@ function initializePage() {
           // iterate through all representatives and display to page
           $.each(data.offices, (i, office) => {
 
+
 						let officeName = office.name;
           	let officialIndices = office.officialIndices;
 						let official = 0;
@@ -58,6 +59,9 @@ function initializePage() {
 								'<option value =' + officeName + '>' + officeName + '</option>'
 						  );
 					  }
+
+
+
 
             // display all candidates to views
 						for (let j = 0; j < officialIndices.length; j++) {
@@ -79,12 +83,18 @@ function initializePage() {
 								phones = '';
 							}
 
-							photoURL = official.photoUrl;
+							if (official.photoUrl) {
+								photoURL = official.photoUrl;
+							} else {
+								photoURL = 'http://style.anu.edu.au/_anu/4/images/placeholders/person.png';
+							}
+
+
 
 							if(official.urls) {
 							  website = official.urls[0];
 							} else {
-								website = '';
+							  website = '';
 							}
 
 							console.log(name + ' ' + officeName + ' ' + officialIndices[j]);
@@ -94,9 +104,7 @@ function initializePage() {
 								`
 							<div class="card-container">
 								<!-- Image -->
-								<div class="image-container">
-									<i class="material-icons" id="favorite-card">favorite</i>
-									<img class="official-image" src=${photoURL}></img>
+								<div class="image-container official-image" style="background-image: url(${photoURL})">
 								</div>
 
 								<!-- Description -->
