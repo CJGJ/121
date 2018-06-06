@@ -21,23 +21,24 @@
 **HTML**:
 - **debate.html** - Shows all the content of the page and connects with debateTopic.js for full functionality. Contains the button for creating new debate topics.
 - **elections.html** - Contains header, search box, and div to show the mapbox map. It also contains some JS code that creates the map and pulls the address value from the search box. This is connects to elections.js to for full functionality.
-- **representative.html**:
-- **voteApp.html**:
+- **representative.html**: Gives a more detailed view of each specific candidate and allows us to discuss their
+policies in more detail.
+- **voteApp.html**: Major home page with the focus on entering a search bar and finding and displaying all candidates/reps in a listed order of cards. Click to go to rep.html with the focused information on the specific candidates.
 - **login.html**: A simple login page, which incorporates a username and password text box in order for the user to log in. Uses a "Wizard of Oz" login just to show basic functionality.
 
 **CSS**:
 - **main.css** - Contains all of the styling for common components in all the html files (header, font, color, buttons, etc.)
 - **debate.css** - Contains the styling for the debate.html page. It mostly styles the page so that it displays three cards in every row. Also styles the images and comment layout in the cards and modal.
 - **elections.css** - Minimal styling - just styles the left hand portion of the elections.html file which displays the election IDs and addresses.
-- **represenative.css** -
-- **voteApp.css** -
+- **represenative.css** - Minimalistic styling for the reps in order to stray away from pointless details and focus on the right information for the people.
+- **voteApp.css** - Contains all the styling for the home page, originally had some bootstrap search box but configured it to match the center of the site. Also contains cards that display each rep with minimal information.
 - **login.css** - Contains very minimal styling for the login page, including the logo and the text boxes.
 
 **JS**:
 - **debateTopic.js** - Is the core code for the functionality in the debate page. It connects to the firebase database in order to store all of the user inputs (debate topics and comments for each topic). It will also pull all of the data from this database and renders/appends them to the debate.html page.
 - **elections.js** - Core functionalities for the Elections page. The JavaScript file contains a function which places markers and pop-ups on the map, as well as the location names/addresses on the side bar. It also contains a function which incorporates the Google Civic Information API in order to get all of the upcoming elections for the user to choose from.
-- **representative.js** -
-- **voteApp.js** -
+- **representative.js** - Helps add more information to the representatives when clicked on and gives functionality for discussion of reps.
+- **voteApp.js** - Home page js that gives it the button functions and api calls along with rendering the candidates after address is entered based on the address.
 - **login.js** - Basic rendering of HTML output for the login page.
 
 ## Video:
