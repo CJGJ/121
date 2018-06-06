@@ -98,6 +98,7 @@ body {
 #favorite {
   position: relative;
   bottom: 25px;
+  visibility: hidden;
 }
 
 #favorite:hover {
@@ -114,6 +115,7 @@ body {
   bottom: 10px;
   background-image: url('../images/mark.jpg');
   background-size: cover;
+  visibility: hidden;
   /*border: solid 0.5px #52a3ff;*/
 }
 
