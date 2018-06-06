@@ -31,11 +31,14 @@ function locationCall(pUrl, ev) {
 						const city = e.address.city + ' ';
 						const state = e.address.state;
 
+						const locID = 'loc' + counter;
+
 						const fullAddress = line1 + city + state;
 
 						const hours = e.pollingHours;
 
 						console.log(fullAddress);
+
 						let popupDesc = '<h4 class="locations">' + hours + '</h4>' + '<h3 class="locations">' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>';
 						$(".electionContent").append('<li class="locations">' + '<h3>' + pollName + '</h3>'+ '<p>' + line1 + '<br>' + city + ',' + state + '<br>' + '</p>' + '</li>' );
 
@@ -48,6 +51,7 @@ function locationCall(pUrl, ev) {
 						const lat = response.results[0].location.lat;
 
 						const coordinates = [lng, lat];
+
 
 
 					  let geojsonTemplate =
@@ -67,8 +71,12 @@ function locationCall(pUrl, ev) {
 						          ]
 						 };
 
+						// create DOM element for the marker
+						var el = document.createElement('div');
+						el.id = 'marker' + counter;
 
-					  //	const marker = new mapboxgl.Marker();
+
+
 						let marker = new mapboxgl.Marker();
 
 

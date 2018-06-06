@@ -2,17 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/representative.css">
+    <link rel="stylesheet" type="text/css" href="../../css/representative.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <title>To the polls!</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body>
 
@@ -21,10 +19,21 @@
 
         <!-- Menu -->
         <ul class="nav-container">
-          <a href="voteApp.html"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
-          <a href="voteApp.html"><li class="nav-item" id="home">Home</li></a>
-          <a href="elections.html"><li class="nav-item" id="elections">Elections</li></a>
-          <a href="debate.html"><li class="nav-item" id="debate">Debate</li></a>
+          <a href="/">
+            <li class="nav-item" id="logo"><img src="unbiased_logo.png"></li>
+          </a>
+          <a href="/">
+            <li class="nav-item" id="home">Home</li>
+          </a>
+          <a href="elections.html">
+            <li class="nav-item" id="elections">Elections</li>
+          </a>
+          <a href="debate.html">
+            <li class="nav-item" id="debate">Debate</li>
+          </a>
+          <a href="/representatives">
+            <li class="nav-item" id="representatives">Representatives</li>
+          </a>
 
           <!-- Right Portion of the Menu -->
           <ul class="right-menu">
@@ -66,8 +75,8 @@
     		</div>
     		<div class="main-content">
     			<div class="information">
-    				<h2 class="titleRep">Title of Representative</h2>
-    				<h1 class="name">Name of Representative</h1>
+    				<h2 class="titleRep">{{office}}</h2>
+    				<h1 class="name">{{name}}</h1>
     				<p class="description">Description about this person</p>
 
 
@@ -113,7 +122,20 @@
 
   </body>
 
-
-
-  <script src="jquery-3.3.1.min.js"></script>
+  <!-- FIRE BASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBf6Tq5pfcI9KPrWHz2CWVKS6Vf0eYIqWk",
+    authDomain: "voteapp-reps.firebaseapp.com",
+    databaseURL: "https://voteapp-reps.firebaseio.com",
+    projectId: "voteapp-reps",
+    storageBucket: "",
+    messagingSenderId: "1088778869459"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="../../rep_pages.js"></script>
 </html>

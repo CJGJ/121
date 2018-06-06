@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/voteApp.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+
+  <!-- FIRE BASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBf6Tq5pfcI9KPrWHz2CWVKS6Vf0eYIqWk",
+    authDomain: "voteapp-reps.firebaseapp.com",
+    databaseURL: "https://voteapp-reps.firebaseio.com",
+    projectId: "voteapp-reps",
+    storageBucket: "",
+    messagingSenderId: "1088778869459"
+  };
+  firebase.initializeApp(config);
+  </script>
+
+
+  <title>To the polls!</title>
+
+  <style>
+    #result {
+      position: absolute;
+      width: 100%;
+      max-width: 870px;
+      cursor: pointer;
+      overflow-y: auto;
+      max-height: 400px;
+      box-sizing: border-box;
+      z-index: 1001;
+    }
+    .link-class:hover {
+      background-color: #f1f1f1;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="menu">
+
+      <!-- Menu -->
+      <ul class="nav-container">
+        <a href="/">
+          <li class="nav-item" id="logo"><img src="unbiased_logo.png"></li>
+        </a>
+        <a href="/">
+          <li class="nav-item" id="home">Home</li>
+        </a>
+        <a href="elections.html">
+          <li class="nav-item" id="elections">Elections</li>
+        </a>
+        <a href="debate.html">
+          <li class="nav-item" id="debate">Debate</li>
+        </a>
+        <a href="/representatives">
+          <li class="nav-item" id="representatives">Representatives</li>
+        </a>
+
+        <!-- Right Portion of the Menu -->
+        <ul class="right-menu">
+          <li class="menu-buttons">
+            <button class="debate-button">Create a Debate</button>
+          </li>
+
+          <li class="menu-buttons">
+            <i class="material-icons" id="favorite">favorite</i>
+          </li>
+
+          <li class="menu-buttons">
+            <div class="profile"></div>
+          </li>
+        </ul>
+
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="main-container">
+    <h1 class="title">Find candidates in your area</h1>
+
+    <!-- SEARCH BAR -->
+    <div class="searchContainer" style="width:900px;">
+      <div align="center">
+        <p id="test">9500 Gilman Dr, La Jolla, CA 92093</p>
+        <p id="test2">County Rd 164, Bogard, MO 64622</p>
+        <input type="text" name="search" id="search" placeholder="Your Address" class="form-control"/>
+      </div>
+      <ul class="list-group" id="result"></ul>
+    </div>
+
+
+    <!-- OFFICE DROP DOWN MENU -->
+    <div class="drop-menu-office">
+      <select id="offices" align="center">
+        <option value="all">All</option>
+      </select>
+    </div>
+
+    <!--- LOAD REPS BUTTON -->
+    <div class="reps">
+      <button id="search_reps">Search</button>
+      <!--<ul id="candidates"></ul>-->
+    </div>
+
+    <div id="representatives_container">
+
+      <!-- Card Skeleton
+        <div class="card-container">
+
+          <div class="image-container">
+            <i class="material-icons" id="favorite-card">favorite</i>
+          </div>
+
+
+          <div class="description-container">
+            <p class="title-rep">Title | Party</p>
+            <h2 id="rep-name">Name of Rep</h2>
+            <p class="contact">Contact Info</p>
+          </div>
+
+          <div class="buttons-container">
+            <button class="representative-button">More Info <i class="material-icons" id="right-icon">chevron_right</i> </button>
+          </div>
+        </div>
+      -->
+
+
+    </div>
+
+  </div>
+
+  <!-- FIRE BASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBf6Tq5pfcI9KPrWHz2CWVKS6Vf0eYIqWk",
+    authDomain: "voteapp-reps.firebaseapp.com",
+    databaseURL: "https://voteapp-reps.firebaseio.com",
+    projectId: "voteapp-reps",
+    storageBucket: "",
+    messagingSenderId: "1088778869459"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/js/candidate.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+    <div class="header">
+      <img class="logo" src="http://via.placeholder.com/100x50">
+      <ul>
+        <a href="#"><b><li>Find Your Candidate</li></b></a>
+        <a href="elections.html"><li>Vote</li></a>
+        <a href="debate.html"><li>Debate</li></a>
+      </ul>
+      <div class="cd-button">Create Discussion</div>
+      <img class="profile-icon">
+    </div> -->
