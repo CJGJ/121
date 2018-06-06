@@ -196,11 +196,6 @@ app.get('/debate', (req, res) => {
   res.render('debate');
 });
 
-app.get('/debateTopic', (req, res) => {
-  console.log('GET debateTopic page')
-  res.render('debateTopic');
-});
-
 app.get('/elections', (req, res) => {
   console.log('GET elections page')
   res.render('elections');
