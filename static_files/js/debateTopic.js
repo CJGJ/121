@@ -1,4 +1,12 @@
 
+/*
+ * This javascript file contains all of the code for making debate.html functional. 
+ */
+
+
+
+
+
 $(document).ready(function() {
 	initializePage();
 });
