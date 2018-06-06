@@ -29,8 +29,19 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const handlebars = require('express-handlebars');
-const path = require('path');
+const firebase = require('firebase');
+const fb_app = firebase.initializeApp({
+  apiKey: "AIzaSyBf6Tq5pfcI9KPrWHz2CWVKS6Vf0eYIqWk",
+  authDomain: "voteapp-reps.firebaseapp.com",
+  databaseURL: "https://voteapp-reps.firebaseio.com",
+  projectId: "voteapp-reps",
+  storageBucket: "",
+  messagingSenderId: "1088778869459"
+});
 
+const database = firebase.database();
+
+const path = require('path');
 const app = express();
 
 // set file path for html code to '/views'
@@ -79,13 +90,6 @@ const login = require('./static_files/js/login');
 // Learn more: http://expressjs.com/en/starter/static-files.html
 app.use(express.static('static_files'));
 
-
-// holds data from POST requests
-let data = {
-  elections: []
-};
-
-
 app.get('/voters', (req, res) => {
   db.all('SELECT name FROM voter_info', (err, rows) => {
     console.log(rows);
@@ -101,21 +105,91 @@ app.get('/voters', (req, res) => {
 
 app.get('/', (req, res) => {
   console.log('GET home page')
-  res.render('voteApp');
+  res.render('candidates');
 });
 
-app.get('/representative', (req, res) => {
+app.get('/representatives', (req, res) => {
   console.log('GET representative page');
-  res.render('representative');
+  res.render('representatives');
 });
 
-//app.get('/representative/:name', representatives.view);
-app.get('/representative/:name', (req, res) => {
+app.get('/candidate/:office/:name', (req, res) => {
   const name = req.params.name;
-  console.log('GET page for ' + name);
+  const office = req.params.office;
+  let rep_data = 0;
 
-  res.render('representative', {"name" : name});
+  /*
+  console.log('GET page for ' + name);
+  database.ref('voterInfoResponse/').once('value', (snapshot) => {
+    const data = snapshot.val();
+  });
+
+  console.log('You received some data ' + data);
+
+
+  $.each(data.contests, (i, contest) => {
+
+    const candidates = 0;
+    const arrayLength = 0;
+
+    if(contest.office == office) {
+      // check for candidates and put into array
+      if(contest.candidates) {
+        candidates = contest.candidates;
+        arrayLength = contest.candidates.length;
+      }
+
+      //
+      for (let j = 0; j < arrayLength; j++) {
+        if(candidates[j].name = name) {
+          rep_data = candidates[j];
+        }
+      }
+    }
+  });
+  */
+
+  res.render('candidate', {"name" : name, "office" : office});
 });
+
+app.get('/representative/:office/:name', (req, res) => {
+  const name = req.params.name;
+  const office = req.params.office;
+  let rep_data = 0;
+
+  console.log('GET page for ' + name);
+  database.ref('voterInfoResponse/').once('value', (snapshot) => {
+    const data = snapshot.val();
+  });
+
+  console.log('You received some data ' + data);
+
+  /*
+  $.each(data.contests, (i, contest) => {
+
+    const candidates = 0;
+    const arrayLength = 0;
+
+    if(contest.office == office) {
+      // check for candidates and put into array
+      if(contest.candidates) {
+        candidates = contest.candidates;
+        arrayLength = contest.candidates.length;
+      }
+
+      //
+      for (let j = 0; j < arrayLength; j++) {
+        if(candidates[j].name = name) {
+          rep_data = candidates[j];
+        }
+      }
+    }
+  });
+  */
+
+  res.render('representative', {"name" : name, "office" : office});
+});
+
 
 app.get('/debate', (req, res) => {
   console.log('GET debate page')
