@@ -1,3 +1,8 @@
+/*
+ * Deprecated page, used for pulling information about a representative (including photo, news, etc.) onto
+ * the individual representative page.
+ */
+
 $(document).ready(function() {
 	initializePage();
 });

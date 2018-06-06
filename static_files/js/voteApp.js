@@ -1,3 +1,8 @@
+/*
+ * Holds the initializePage() function, which loads representatives and allows you to
+ * search for any representative that you want, with the name as the input.
+ */
+
 $(document).ready(function() {
 	initializePage();
 
@@ -10,7 +15,7 @@ function initializePage() {
 	console.log("Javascript connected!");
 
 
-	
+
 
 	//const url = "https://api.nytimes.com/svc/search/v2/candidatesearch.json?api-key=bebd5673446e40c0a0613cd3ea327a8d";
 	const $candidates = $('#candidates');

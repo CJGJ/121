@@ -1,3 +1,8 @@
+/*
+ * Holds all styling for the login page, including the username/password text fields, the login button
+ * and the logo.
+ */
+
 #logo {
     margin-top: 70px;
 }
@@ -67,8 +72,6 @@ button:hover {
        width: 100%;
     }
 }
-
-
 
 .modal {
     display: none; /* Hidden by default */

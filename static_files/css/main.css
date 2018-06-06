@@ -1,3 +1,7 @@
+/*
+ * General CSS used for all pages to keep the navigation bar, fonts, etc. consistent throughout the app.
+ */
+
 * {
   font-family: Helvetica;
   margin: 0;

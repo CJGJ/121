@@ -1,3 +1,8 @@
+/*
+ * Deprecated code. CSS Styling for the information cards for each individual representative, including the
+ * news about the representative and general information. 
+ */
+
 * {
   font-family: Helvetica;
   margin: 0;
@@ -120,24 +125,3 @@ ul {
 .chatText {
 	margin-top: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
