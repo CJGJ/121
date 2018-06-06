@@ -38,6 +38,7 @@ const fb_app = firebase.initializeApp({
   storageBucket: "",
   messagingSenderId: "1088778869459"
 });
+
 const database = firebase.database();
 
 const path = require('path');

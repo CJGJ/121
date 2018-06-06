@@ -107,11 +107,6 @@ function initializePage() {
 
 								</div>
 
-								<!-- Button -->
-								<div class="buttons-container">
-									<a href="/candidate/${office}/${name}" rel="modal:open"><button class="representative-button" >More Info <i class="material-icons" id="right-icon">chevron_right</i> </button></a>
-								</div>
-
 								<!-- Modal HTML embedded directly into document -->
 								<div id="ex1" class="modal">
 									<h4> ${office} </h4>
