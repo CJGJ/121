@@ -1,3 +1,7 @@
+<!--  Elections page which holds all the information for WHERE to find a registered voting location near you.
+Solely based on the purpose of being able to type in an actual registered address in search bar then find the election
+that represents the most relevance to you. Finally the map portion of the page is automated to search for the places near
+your area and display content information about them.-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -33,10 +37,10 @@
 
         <!-- Menu -->
         <ul class="nav-container">
-          <a href="voteApp.html"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
-          <a href="voteApp.html"><li class="nav-item" id="home">Home</li></a>
-          <a href="elections.html"><li class="nav-item" id="elections">Elections</li></a>
-          <a href="debate.html"><li class="nav-item" id="debate">Debate</li></a>
+          <a href="/"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
+          <a href="/"><li class="nav-item" id="home">Home</li></a>
+          <a href="/elections"><li class="nav-item" id="elections">Elections</li></a>
+          <a href="/debate"><li class="nav-item" id="debate">Debate</li></a>
 
           <!-- Right Portion of the Menu -->
           <ul class="right-menu">
@@ -68,29 +72,23 @@
             <h2 class='geocoder_title'>Enter Registered Address</h2>
             <h2 class='choose_election_title'>Choose Your Election</h2>
             <div class="search-container">
-               <div id='searchButton' class='geocoder' size='20' ></div>
+              <!-- 7571 Chula Vista Dr Citrus Heights -->
+              <div id='searchButton' class='geocoder' size='20' ></div>
             </div>
 
             <!-- Content for search bar -->
-            <div class="electionContent">
+            <ol class="electionContent">
               <div class="election-id"></div> <!-- polling address -->
               <div class="election-name"></div> <!-- polling name-->
               <div class="election-date"></div> <!-- polling hours---->
-            </div>
+            </ol>
 
-            <div class="pollingContent">
-            <!--  <div class="election-id"></div>
-              <div class="election-name"></div>
-              <div class="election-date"></div>
-            -->
-              <button class="election-button"></button>
-            <!--  <div class="election-id"></div> -->
+            <div class="pollingContent"></div>
+
+            <div class="map-container">
+              <div id='map'></div>
             </div>
           </div>
-        </div>
-
-        <div class="map-container">
-            <div id='map'></div>
         </div>
     </div>
 
@@ -103,6 +101,8 @@
           zoom: 12 // starting zoom
       });
 
+
+
       //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
@@ -111,8 +111,6 @@
       //on user pressing enter on the geocoder bar,
       map.on('load', function() {
         geocoder.on('result', function(ev) {
-        //  map.getSource('single-point').setData(ev.result.geometry);
-          //console.log(ev.result.place_name);
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
           locationCall(pollURL, ev);
         });
