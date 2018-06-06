@@ -33,8 +33,8 @@
 
         <!-- Menu -->
         <ul class="nav-container">
-          <a href="voteApp.html"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
-          <a href="voteApp.html"><li class="nav-item" id="home">Home</li></a>
+          <a href="/"><li class="nav-item" id="logo"><img src="unbiased_logo.png"></li></a>
+          <a href="/"><li class="nav-item" id="home">Home</li></a>
           <a href="elections.html"><li class="nav-item" id="elections">Elections</li></a>
           <a href="debate.html"><li class="nav-item" id="debate">Debate</li></a>
 
@@ -68,9 +68,7 @@
             <h2 class='geocoder_title'>Enter Registered Address</h2>
             <h2 class='choose_election_title'>Choose Your Election</h2>
             <div class="search-container">
-                <!--7571 Chula Vista Dr Citrus Heights -->
-               <div id='searchButton' class='geocoder' size='20' >115 Hearthstone Drive, American Canyon, CA </div>
-
+          <div id='searchButton' class='geocoder' size='20' >7571 Chula Vista Dr Citrus Heights</div>
             </div>
 
             <!-- Content for search bar -->
@@ -98,6 +96,8 @@
           zoom: 12 // starting zoom
       });
 
+
+
       //adds the geocoder search bar to the page
       var geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
@@ -108,11 +108,6 @@
         geocoder.on('result', function(ev) {
           const pollURL = "https://www.googleapis.com/civicinfo/v2/voterinfo";
           locationCall(pollURL, ev);
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 3527df033af781d6cf4617b1327b062112b155be
         });
       });
     </script>
