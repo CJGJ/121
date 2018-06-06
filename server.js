@@ -105,7 +105,7 @@ app.get('/voters', (req, res) => {
 
 app.get('/', (req, res) => {
   console.log('GET home page')
-  res.render('candidates');
+  res.render('representatives');
 });
 
 app.get('/representatives', (req, res) => {

@@ -50,9 +50,6 @@
         <a href="debate.html">
           <li class="nav-item" id="debate">Debate</li>
         </a>
-        <a href="/representatives">
-          <li class="nav-item" id="representatives">Representatives</li>
-        </a>
 
 
         <!-- Right Portion of the Menu -->
@@ -79,25 +76,27 @@
     <h1 class="title">Find candidates in your area</h1>
 
     <!-- SEARCH BAR -->
-    <div class="searchContainer" style="width:900px;">
-      <div align="center">
+    <div class="searchContainer">
+      <div class="search-container">
         <p id="test">9500 Gilman Dr, La Jolla, CA 92093</p>
         <input type="text" name="search" id="search" placeholder="Your Address" class="form-control"/>
+        <!-- OFFICE DROP DOWN MENU 
+        <div class="drop-menu-office">
+          <select id="offices" align="center">
+            <option value="all">All</option>
+          </select>
+        </div>
+        -->
       </div>
       <ul class="list-group" id="result"></ul>
     </div>
 
 
-    <!-- OFFICE DROP DOWN MENU -->
-    <div class="drop-menu-office">
-      <select id="offices" align="center">
-        <option value="all">All</option>
-      </select>
-    </div>
+    
 
     <!--- LOAD REPS BUTTON -->
     <div class="reps">
-      <button id="search_reps">Search</button>
+      <button id="search_reps" class="representative-button">Search</button>
       <!--<ul id="candidates"></ul>-->
     </div>
 
