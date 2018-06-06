@@ -1,3 +1,7 @@
+/*
+*Specific page that focuses on retrieving and displaying the candidates in a card format
+*using the google civic info API
+*/
 $(document).ready(function() {
 	initializePage();
 });
