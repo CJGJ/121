@@ -19,12 +19,12 @@
 ## Source Code Files:
 
 **HTML**:
-- **debate.html** - Shows all the content of the page and connects with debateTopic.js for full functionality. Contains the button for creating new debate topics.
-- **elections.html** - Contains header, search box, and div to show the mapbox map. It also contains some JS code that creates the map and pulls the address value from the search box. This is connects to elections.js to for full functionality.
-- **representative.html**: Gives a more detailed view of each specific candidate and allows us to discuss their
+- **debate.handlebars** - Shows all the content of the page and connects with debateTopic.js for full functionality. Contains the button for creating new debate topics.
+- **elections.handlebars** - Contains header, search box, and div to show the mapbox map. It also contains some JS code that creates the map and pulls the address value from the search box. This is connects to elections.js to for full functionality.
+- **representative.handlebars**: Gives a more detailed view of each specific candidate and allows us to discuss their
 policies in more detail.
-- **voteApp.html**: Major home page with the focus on entering a search bar and finding and displaying all candidates/reps in a listed order of cards. Click to go to rep.html with the focused information on the specific candidates.
-- **login.html**: A simple login page, which incorporates a username and password text box in order for the user to log in. Uses a "Wizard of Oz" login just to show basic functionality.
+- **voteApp.handlebars**: Major home page with the focus on entering a search bar and finding and displaying all candidates/reps in a listed order of cards. Click to go to rep.html with the focused information on the specific candidates.
+- **login.handlebars**: A simple login page, which incorporates a username and password text box in order for the user to log in. Uses a "Wizard of Oz" login just to show basic functionality.
 
 **CSS**:
 - **main.css** - Contains all of the styling for common components in all the html files (header, font, color, buttons, etc.)
