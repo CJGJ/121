@@ -9,11 +9,24 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
+
+  <!-- FIRE BASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBf6Tq5pfcI9KPrWHz2CWVKS6Vf0eYIqWk",
+    authDomain: "voteapp-reps.firebaseapp.com",
+    databaseURL: "https://voteapp-reps.firebaseio.com",
+    projectId: "voteapp-reps",
+    storageBucket: "",
+    messagingSenderId: "1088778869459"
+  };
+  firebase.initializeApp(config);
+  </script>
+
+
   <title>To the polls!</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
   <style>
     #result {
@@ -33,7 +46,6 @@
 
   </style>
 
-
 </head>
 
 <body>
@@ -43,10 +55,10 @@
 
       <!-- Menu -->
       <ul class="nav-container">
-        <a href="voteApp.html">
+        <a href="/">
           <li class="nav-item" id="logo"><img src="unbiased_logo.png"></li>
         </a>
-        <a href="voteApp.html">
+        <a href="/">
           <li class="nav-item" id="home">Home</li>
         </a>
         <a href="elections.html">
@@ -54,6 +66,9 @@
         </a>
         <a href="debate.html">
           <li class="nav-item" id="debate">Debate</li>
+        </a>
+        <a href="/representatives">
+          <li class="nav-item" id="representatives">Representatives</li>
         </a>
 
         <!-- Right Portion of the Menu -->
@@ -82,12 +97,20 @@
     <!-- SEARCH BAR -->
     <div class="searchContainer" style="width:900px;">
       <div align="center">
-        <p>9500 Gilman Dr, La Jolla, CA 92093</p>
+        <p id="test">9500 Gilman Dr, La Jolla, CA 92093</p>
+        <p id="test2">County Rd 164, Bogard, MO 64622</p>
         <input type="text" name="search" id="search" placeholder="Your Address" class="form-control"/>
       </div>
       <ul class="list-group" id="result"></ul>
     </div>
 
+
+    <!-- OFFICE DROP DOWN MENU -->
+    <div class="drop-menu-office">
+      <select id="offices" align="center">
+        <option value="all">All</option>
+      </select>
+    </div>
 
     <!--- LOAD REPS BUTTON -->
     <div class="reps">
@@ -122,11 +145,24 @@
 
   </div>
 
-
+  <!-- FIRE BASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBf6Tq5pfcI9KPrWHz2CWVKS6Vf0eYIqWk",
+    authDomain: "voteapp-reps.firebaseapp.com",
+    databaseURL: "https://voteapp-reps.firebaseio.com",
+    projectId: "voteapp-reps",
+    storageBucket: "",
+    messagingSenderId: "1088778869459"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/js/candidate.js"></script>
 
 </body>
-
-<script src="/js/rep_pages.js"></script>
 
 </html>
 
