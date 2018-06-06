@@ -1,3 +1,7 @@
+/*
+ * Holds all styling for the debate page, including each debate card, Pro/Con boxes, etc.
+ */
+
 #debate {
   font-weight: 400;
   color: #3d3d3d;
@@ -119,7 +123,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.formModal-container { 
+.formModal-container {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -177,7 +181,7 @@ select {
 }
 
 .postButton:hover {
-  
+
 }
 
 
@@ -302,37 +306,3 @@ select {
 .info-container {
   padding: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

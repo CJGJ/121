@@ -1,3 +1,8 @@
+/*
+ * Holds all styling for the Elections page, including the MapBox map, the upcoming elections buttons,
+ * the search bar, and all sidebar text.
+ */
+
 body {
 	margin:0; padding:0;
 }

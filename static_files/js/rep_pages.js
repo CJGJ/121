@@ -1,3 +1,8 @@
+/*
+ * Holds the initializePage() function, which pulls representatives in the area and populates the page with
+ * the representatives.
+ */
+
 $(document).ready(function() {
 	initializePage();
 });
